@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*, *::before, *::after {
+  box-sizing: border-box;
+  
+}
+:root {
+
+  font-family: "Aeonik", sans-serif;
+  font-weight: 400;
+  --primary-brown : #B05405;
+  --light-grey-border : rgba(79, 79, 79, 0.3);
+  --light-grey-text: rgba(79, 79, 79, 0.6);
+  --main-text-black : #121212;
+  --secondary-text-black : #4f4f4f;
+  --item-color-green: #069b10;
+  --item-color-blue: #0B069B;
+  --item-color-pink: #BC0957;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+@font-face {
+  font-family: "Aeonik";
+  src: url('./fonts/AeonikTRIAL-Regular.otf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Aeonik";
+  src: url('./fonts/AeonikTRIAL-Bold.otf');
+  font-weight: 700;
+}
+/* @font-face {
+  font-family: "Aeonik";
+  src: url('./fonts/AeonikTRIAL-BoldItalic.otf')
+} */
+@font-face {
+  font-family: "Aeonik";
+  src: url('./fonts/AeonikTRIAL-Light.otf');
+  font-weight: 300;
+}
+/* @font-face {
+  font-family: "Aeonik";
+  src: url('./fonts/AeonikTRIAL-LightItalic.otf')
+} */
+/* @font-face {
+  font-family: "Aeonik";
+  src: url('./fonts/AeonikTRIAL-RegularItalic.otf')
+} */
+
+#error-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#error-page2{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+p{
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+
