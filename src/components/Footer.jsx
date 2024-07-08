@@ -4,7 +4,7 @@ import linkedin_icon from '../assets/icons/linkedin.svg';
 import facebook_icon from '../assets/icons/facebook.svg';
 const Footer = () => {
   return (
-    <div className=" py-[34px] fixed right-[0px] left-[0px] bottom-[0px] bg-footerbg">
+    <div className=" py-[34px] mt-[5rem] bg-footerbg">
       <div className="flex flex-col gap-[4rem]">
         <div className="mx-auto max-w-[2200px] w-full">
           <div className="flex justify-between pr-custom-mr pl-custom-ml">

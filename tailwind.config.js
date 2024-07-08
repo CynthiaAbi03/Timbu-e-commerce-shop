@@ -8,6 +8,7 @@ export default {
   theme: {
     colors: {
       browntheme : '#B05405',
+      white : '#FFFFFF',
       greyborder : 'rgba(79, 79, 79, 0.3)',
       greytext: 'rgba(79, 79, 79, 0.6)',
       primaryblack : '#121212',
@@ -39,5 +40,8 @@ export default {
      
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss"),
+    require("autoprefixer"),
+  ],
 }

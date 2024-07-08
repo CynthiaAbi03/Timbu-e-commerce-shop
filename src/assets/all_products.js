@@ -43,7 +43,7 @@ let all_product = [
         id: 4,
         images: p4_img,
         category: 'JEWELERY',
-        name: 'Ladies Crystal rings and pendant jewelery set',
+        name: 'Ladies Crystal rings and pendant jewelery set ',
         type: 'Women',
         price: 200
 
