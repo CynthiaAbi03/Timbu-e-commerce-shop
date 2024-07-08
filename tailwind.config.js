@@ -17,7 +17,8 @@ export default {
       greentheme: '#069b10',
       bluetheme: '#0B069B',
       pinktheme: '#BC0957',
-      footerbg: '#FBEDE2'
+      footerbg: 'rgba(251,237,226,2.2)',
+      greyfill: 'rgba(185,179,179,0.4)'
     },
     spacing: {
       'custom-mr' : '50px',
