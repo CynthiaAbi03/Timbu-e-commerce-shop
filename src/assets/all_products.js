@@ -26,7 +26,7 @@ let all_product = [
         images: p2_img,
         category: 'BAGS',
         name: 'Woman Square Solid Tassel Large Messenger Handbag',
-        type:'Women',
+        type: 'Women',
         price: 200
 
     },
@@ -42,15 +42,7 @@ let all_product = [
     {
         id: 4,
         images: p4_img,
-        category: 'JEWELERY',
-        name: 'Ladies Crystal rings and pendant jewelery set ',
-        type: 'Women',
-        price: 200
-
-    },
-    {
-        id: 5,
-        images: p5_img,
+        
         category: 'DRESSES',
         name: 'Two Piece Blazer Sets Sleeveless Short Jacket High Waist Loose Pants',
         type: 'Women',
@@ -58,8 +50,10 @@ let all_product = [
 
     },
     {
-        id: 6,
-        images: p6_img,
+        id: 5,
+        images: p5_img,
+        // category: 'DRESSES',
+        // name: 'Two Piece Blazer Sets Sleeveless Short Jacket High Waist Loose Pants',
         category: 'BAG',
         name: 'Women\'s Fashion Shoulder Bag Crossbody Bag',
         type: 'Women',
@@ -67,8 +61,10 @@ let all_product = [
 
     },
     {
-        id: 7,
-        images: p7_img,
+        id: 6,
+        images: p6_img,
+        // category: 'BAG',
+        // name: 'Women\'s Fashion Shoulder Bag Crossbody Bag',
         category: 'SHOES',
         name: 'acquered Leather Pumps Mid Heels Stiletto Wedding Bridal Shoes',
         type: 'Women',
@@ -76,25 +72,30 @@ let all_product = [
 
     },
     {
-        id: 8,
-        images: p8_img,
+        id: 7,
+        images: p7_img,
+        // category: 'SHOES',
+        // name: 'acquered Leather Pumps Mid Heels Stiletto Wedding Bridal Shoes',
         category: 'JEWELERY',
         name: 'Women Chord With Sparkling Zirconia Jewelery Set',
+        type: 'Women',
+        price: 200
+
+    },
+    {
+        id: 8,
+        images: p8_img,
+        category: 'DRESSES',
+        name: 'Silky Trending Ladies 2set/ Top And Pant',
+        type: 'women',
         price: 200
 
     },
     {
         id: 9,
         images: p9_img,
-        category: 'DRESSES',
-        name: 'Silky Trending Ladies 2set/ Top And Pant',
-        type: 'Women',
-        price: 200
-
-    },
-    {
-        id: 10,
-        images: p10_img,
+        // category: 'DRESSES',
+        // name: 'Silky Trending Ladies 2set/ Top And Pant',
         category: 'BAG',
         name: 'Woman Square Solid Tassel Large Messenger Handbag ',
         type: 'Women',
@@ -102,18 +103,27 @@ let all_product = [
 
     },
     {
-        id: 11,
-        images: p11_img,
+        id: 10,
+        images: p10_img,
         category: 'DRESSES',
         name: 'Sexy Strapless  Dress Front Slit Bare Shoulder ',
+        type: 'Women',
+        price: 200
+
+    },
+    {
+        id: 11,
+        images: p11_img,
+        category: 'SHOES',
+        name: 'Martin Ankle Pocket Boots For Women Party Dress Work Shoes',
         type: 'Women',
         price: 200
     },
     {
         id: 12,
         images: p12_img,
-        category: 'DRESSES',
-        name: 'Martin Ankle Pocket Boots For Women Party Dress Work Shoes',
+        category: 'JEWELERY',
+        name: 'Ladies Crystal rings and pendant jewelery set ',
         type: 'Women',
         price: 200
     },

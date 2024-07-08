@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import { useEffect } from 'react';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import product_1 from '../assets/images/product_1.png';
@@ -24,10 +25,14 @@ const Cart = () => {
       name: 'Ladies Off Shoulder Slit Hem Cable Party Dress with Belt',
     },
   ];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
-      <div className="w-full max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml flex flex-col gap-[2rem]">
+      <div className="w-full mt-[2rem] max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml flex flex-col gap-[2rem]">
         <div className="flex items-center gap-[.25rem]">
           <Link to="/">
             <img src={arrow_back} alt="back arrow" />
@@ -42,7 +47,7 @@ const Cart = () => {
                   key={index}
                   className="py-[.8rem] w-full px-[1.25rem] flex gap-[1rem]"
                 >
-                  <div className="h-[150px]">
+                  <div className="h-[140px]">
                     <img
                       className="h-full w-full rounded-[4px]"
                       src={item.image}

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import hero_img from '../assets/images/HeroImage.png';
-import Box from '@mui/material/Box';
+import Checkbox from '@mui/material/Checkbox';
 import DynamicCSSVariables from '../components/CustomSlider';
 import './styles/shop.css';
 import p1_img from '../assets/images/product_1.png';
@@ -10,8 +10,11 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import chevron_down from '../assets/icons/chevron-down.svg';
 import all_products from '../assets/all_products';
+import left_chev from '../assets/icons/left_chev.svg';
+import right_chev from '../assets/icons/right_chev.svg';
 
 const Shop = () => {
+  const navigate = useNavigate();
   const filterCategory = ['Shoes', 'Jewelry', 'Bags'];
   const filterSizes = ['Small', 'Medium', 'Large', 'Extra Large'];
   const [value, setValue] = useState(500);
@@ -21,6 +24,15 @@ const Shop = () => {
   function valuetext(value) {
     return `${value}°C`;
   }
+  
+  // const scrollToTopAndNavigate = (event, history) => {
+  //   event.preventDefault();
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  //   setTimeout(() => {
+  //     navigate.push('/cart');
+  //   }, 500); 
+  // };
 
   return (
     <div className="min-h-screen">
@@ -84,7 +96,8 @@ const Shop = () => {
         </div>
 
         <div className="flex gap-[2rem]">
-          <div className="border border-solid  bg-white border-greyborder w-[360px] px-[30px] py-[30px] h-[600px] rounded-md">
+          {/* sidebar */}
+          <div className="border border-solid  bg-white border-greyborder w-[360px] px-[30px] py-[30px] h-[600px] rounded-lg">
             <div className="flex flex-col gap-[2rem]">
               <p>Filter By:</p>
               <div className="flex flex-col gap-[.5rem]">
@@ -93,10 +106,14 @@ const Shop = () => {
                 </p>
                 <div className="flex flex-col gap-[.5rem]">
                   <div className="flex items-center gap-[.5rem]">
-                    <input
-                      type="checkbox"
-                      name="dresses"
-                      className="border border-solid rounded-sm h-[14px] w-[14px] border-primaryblack checked:bg-browntheme"
+                    <Checkbox
+                      defaultChecked
+                      style={{
+                        color: '#b05405',
+                        padding: '0px',
+                        margin: '0px',
+                        borderWidth: '1px',
+                      }}
                     />
                     <label
                       htmlFor="dresses"
@@ -107,10 +124,12 @@ const Shop = () => {
                   </div>
                   {filterCategory.map((name, index) => (
                     <div key={index} className="flex items-center gap-[.5rem]">
-                      <input
-                        type="checkbox"
-                        name={name}
-                        className="border border-solid rounded-sm h-[14px] w-[14px] border-primaryblack checked:bg-browntheme"
+                      <Checkbox
+                        style={{
+                          padding: '0px',
+                          margin: '0px',
+                          borderWidth: '1px',
+                        }}
                       />
                       <label
                         htmlFor={name}
@@ -129,10 +148,12 @@ const Shop = () => {
                 <div className="flex flex-col gap-[.5rem]">
                   {filterSizes.map((name, index) => (
                     <div key={index} className="flex items-center gap-[.5rem]">
-                      <input
-                        type="checkbox"
-                        name={name}
-                        className="border border-solid rounded-sm h-[14px] w-[14px] border-primaryblack checked:bg-browntheme"
+                      <Checkbox
+                        style={{
+                          padding: '0px',
+                          margin: '0px',
+                          borderWidth: '1px',
+                        }}
                       />
                       <label
                         htmlFor={name}
@@ -163,6 +184,8 @@ const Shop = () => {
               </div>
             </div>
           </div>
+
+          {/* display-products */}
           <div className="grid grid-cols-3 gap-[1.825rem]">
             {all_products.map((item, index) => (
               <div
@@ -170,9 +193,9 @@ const Shop = () => {
                 className="flex flex-col border border-greyborder rounded-md "
               >
                 <div className="relative">
-                  <div className="w-full h-[450px]">
+                  <div className="w-full h-[350px]">
                     <img
-                      className="w-full h-full object-fill object-center"
+                      className="w-full h-full rounded-t-md object-fill object-center"
                       src={item.images}
                       alt=""
                     />
@@ -186,7 +209,7 @@ const Shop = () => {
                   </div>
                 </div>
                 <div className="flex flex-col h-full justify-between px-[1.25rem]   py-[1.4rem]">
-                  <div className='flex flex-col gap-[.6rem] '>
+                  <div className="flex flex-col gap-[.6rem] ">
                     <p className="text-greytext">{item.category}</p>
                     <p className="text-primaryblack text-[1.125rem]">
                       {item.name}
@@ -196,7 +219,11 @@ const Shop = () => {
                     </p>
                   </div>
                   <div className="flex justify-center w-full mt-[1rem]">
-                    <Link to='/cart' className="bg-browntheme py-[.5rem] text-center text-white w-full font-medium rounded-md">
+                    <Link
+                    //  onClick={(event) => scrollToTopAndNavigate(event, history)}
+                      to="/cart"
+                      className="bg-browntheme py-[.5rem] text-center text-white w-full font-medium rounded-md"
+                    >
                       Add to Cart
                     </Link>
                   </div>
@@ -205,6 +232,34 @@ const Shop = () => {
             ))}
           </div>
         </div>
+          
+         {/* pagination..nav */}
+        <div className='flex items-center justify-center gap-[1.25rem]'>
+            <button className='w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center'>
+              <img src={left_chev} alt="left chevron" />
+            </button>
+            <button className='w-[50px] h-[50px] rounded-md border  text-white text-[1.125rem] font-bold bg-browntheme'>
+              1
+            </button>
+            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder'>
+              2
+            </button>
+            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-bold border-greyborder'>
+              ...
+            </button>
+            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder'>
+              9
+            </button>
+            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder'>
+              10
+            </button>
+            <button className='w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center'>
+              <img src={right_chev} alt="left chevron" />
+            </button>
+
+        </div>
+
+
       </div>
       <Footer />
     </div>
