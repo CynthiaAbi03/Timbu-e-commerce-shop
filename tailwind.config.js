@@ -8,9 +8,10 @@ export default {
   theme: {
     colors: {
       browntheme : '#B05405',
+      hoverbrown: '#904504',
       white : '#FFFFFF',
       greyborder : 'rgba(79, 79, 79, 0.3)',
-      greytext: 'rgba(79, 79, 79, 0.6)',
+      greytext: 'rgba(79, 79, 79, 0.8)',
       primaryblack : '#121212',
       secondaryblack : '#4f4f4f',
       footerline: 'rgba(18,18,18,0.2)',
@@ -18,7 +19,8 @@ export default {
       bluetheme: '#0B069B',
       pinktheme: '#BC0957',
       footerbg: 'rgba(251,237,226,2.2)',
-      greyfill: 'rgba(185,179,179,0.4)'
+      greyfill: 'rgba(185,179,179,0.4)',
+      black: '#000000'
     },
     spacing: {
       'custom-mr' : '50px',

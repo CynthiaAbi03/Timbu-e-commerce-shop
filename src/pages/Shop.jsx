@@ -15,7 +15,7 @@ import right_chev from '../assets/icons/right_chev.svg';
 
 const Shop = () => {
   const navigate = useNavigate();
-  const filterCategory = ['Shoes', 'Jewelry', 'Bags'];
+  const filterCategory = ['Women', 'Children'];
   const filterSizes = ['Small', 'Medium', 'Large', 'Extra Large'];
   const [value, setValue] = useState(500);
   const handleChange = (event) => {
@@ -54,7 +54,6 @@ const Shop = () => {
           </div>
           <div className="flex items-center e text-[1.25rem] gap-[2rem]">
             <NavLink
-              exact
               to="/"
               className={({ isActive }) =>
                 isActive ? 'font-medium text-browntheme' : 'font-light'
@@ -67,25 +66,33 @@ const Shop = () => {
               className={({ isActive }) =>
                 isActive ? 'font-medium text-browntheme' : 'font-light'
               }
-              to="/allproducts/men"
+              to="/allproducts/dresses"
             >
-              Men
+              Dresses
             </NavLink>
             <NavLink
               className={({ isActive }) =>
                 isActive ? 'font-medium text-browntheme' : 'font-light'
               }
-              to="/allproducts/women"
+              to="/allproducts/shoes"
             >
-              Women
+              Shoes
             </NavLink>
             <NavLink
               className={({ isActive }) =>
                 isActive ? 'font-medium text-browntheme' : 'font-light'
               }
-              to="/allproducts/children"
+              to="/allproducts/jewelry"
             >
-              Children
+              Jewelry
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'font-medium text-browntheme' : 'font-light hover:text-black'
+              }
+              to="/allproducts/bag"
+            >
+              Bag
             </NavLink>
           </div>
           <div className="flex text-primaryblack">
@@ -97,7 +104,7 @@ const Shop = () => {
 
         <div className="flex gap-[2rem]">
           {/* sidebar */}
-          <div className="border border-solid  bg-white border-greyborder w-[360px] px-[30px] py-[30px] h-[600px] rounded-lg">
+          <div className="border border-solid sticky top-[10px] bg-white border-greyborder w-[360px] px-[30px] py-[30px] h-[600px] rounded-lg">
             <div className="flex flex-col gap-[2rem]">
               <p>Filter By:</p>
               <div className="flex flex-col gap-[.5rem]">
@@ -116,10 +123,10 @@ const Shop = () => {
                       }}
                     />
                     <label
-                      htmlFor="dresses"
+                      htmlFor="Men"
                       className="font-light  text-primaryblack"
                     >
-                      Dresses
+                      Men
                     </label>
                   </div>
                   {filterCategory.map((name, index) => (
@@ -129,6 +136,12 @@ const Shop = () => {
                           padding: '0px',
                           margin: '0px',
                           borderWidth: '1px',
+                        }}
+                        sx={{
+                          color: '', 
+                          '&.Mui-checked': {
+                            color: '#b05405', 
+                          },
                         }}
                       />
                       <label
@@ -154,6 +167,13 @@ const Shop = () => {
                           margin: '0px',
                           borderWidth: '1px',
                         }}
+                        sx={{
+                          color: '', 
+                          '&.Mui-checked': {
+                            color: '#b05405', 
+                          },
+                        }}
+                        
                       />
                       <label
                         htmlFor={name}
@@ -222,7 +242,7 @@ const Shop = () => {
                     <Link
                     //  onClick={(event) => scrollToTopAndNavigate(event, history)}
                       to="/cart"
-                      className="bg-browntheme py-[.5rem] text-center text-white w-full font-medium rounded-md"
+                      className="bg-browntheme py-[.5rem] text-center text-white w-full font-medium rounded-md hover:bg-hoverbrown hover:transition"
                     >
                       Add to Cart
                     </Link>

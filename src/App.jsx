@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Shop />} errorElement={<ErrorPage />} />
+        <Route path="/" element={<Shop />} errorElement={<ErrorPage />} />
 
         <Route
           path="/allproducts/:mainCategory"

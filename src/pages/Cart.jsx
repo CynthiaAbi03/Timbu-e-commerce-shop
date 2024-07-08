@@ -37,12 +37,14 @@ const Cart = () => {
           <Link to="/">
             <img src={arrow_back} alt="back arrow" />
           </Link>
-          <p className="text-[1.5rem]">Shopping Cart</p>
+          <p className="text-[1.5rem]">Back</p>
         </div>
         <div className="flex justify-between gap-[2rem] w-full">
+
+          {/* cart view */}
           <div className="flex flex-col  w-[75%] gap-[2rem]">
             {cartProduct.map((item, index) => (
-              <div className="flex flex-col border items-start w-full self-start rounded-md border-greyborder">
+              <div key={index} className="flex flex-col border items-start w-full self-start rounded-md border-greyborder">
                 <div
                   key={index}
                   className="py-[.8rem] w-full px-[1.25rem] flex gap-[1rem]"
@@ -91,6 +93,8 @@ const Cart = () => {
               </div>
             ))}
           </div>
+
+          {/* order summary */}
           <div className=" border w-[25%] self-start border-greyborder rounded-md  pt-[1rem] pb-[9rem]">
             <div className="flex flex-col gap-[1.25rem]">
               <p className="px-[1.5rem] font-medium text-primaryblack text-[1.5rem]">
@@ -110,11 +114,12 @@ const Cart = () => {
                   <p>Total</p>
                   <p>$500</p>
                 </div>
-                <div className="px-[1.5rem] w-full">
-                  <button className="bg-browntheme w-full py-[.25rem] rounded-md text-white font-medium text-[1.25rem] ">
-                    Check Out
-                  </button>
-                </div>
+                <Link
+                  to="/checkout"
+                  className="bg-browntheme text-center mt-[1rem] mx-[1.5rem] py-[.25rem] w-[full] rounded-md text-white font-medium text-[1.25rem] hover:bg-hoverbrown hover:transition "
+                >
+                  Check Out
+                </Link>
               </div>
             </div>
           </div>
