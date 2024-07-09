@@ -43,7 +43,7 @@ export default {
     },
     screens: {
         'sm' : '720px',
-        'md' : '1024px',
+        'md' : '1200px',
         'xl': '1320px',
         'xsm': '440px'
     },

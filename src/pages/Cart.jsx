@@ -48,53 +48,61 @@ const Cart = () => {
         </div>
         <div className="flex justify-between gap-[2rem] w-full max-sm:flex-col max-md:flex-col">
           {/* cart view */}
-          <div className="flex flex-col  w-[75%] gap-[2rem] max-sm:w-full max-md:w-full">
+          <div className=" flex flex-col  w-[75%] gap-[2rem] max-sm:w-full max-md:w-full">
             {cartProduct.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col border items-start w-full self-start rounded-md border-greyborder"
+                className="flex flex-col border items-start w-full h-full self-start rounded-md border-greyborder"
               >
                 <div
                   key={index}
-                  className="py-[.8rem] w-full px-[1.25rem] flex gap-[1rem] "
+                  className="py-[.8rem] w-full h-full px-[1.25rem] flex  gap-[1rem] "
                 >
-                  <div className="h-[140px] max-sm:h-full max-xsm:h-full max-md:h-full max-sm:bg-browntheme ">
+                  <div className="h-[140px] md:h-full ">
                     <img
                       className="h-full w-full rounded-[4px]"
                       src={item.image}
                       alt=""
                     />
                   </div>
-                  <div className=" flex flex-col w-full justify-between  ">
+                  <div className="flex flex-col w-full justify-between  ">
                     <div className="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[1rem] max-sm:flex-col max-sm:items-start max-sm:gap-[1rem]">
-                      <p className="text-[1.25rem] text-primaryblack max-sm:text-[1rem] max-xsm:text-[1rem]">
+                      <p className="text-[1.25rem] flex-1 text-primaryblack max-sm:text-[.5rem] max-xsm:text-[1rem]">
                         {item.name}
                       </p>
-                      <div className="flex items-center text-[1.25rem] max-sm:text-[1.25rem] max-xsm:text-[1rem]">
-                        <button className="bg-greyfill px-[1rem] py-[.5rem] border border-greyborder text-greytext">
-                          -
-                        </button>
-                        <p className="px-[1rem] py-[.5rem] font-light border-b border-t border-greyborder text-greytext ">
-                          2
+                      <div className='flex items-center justify-between flex-1 w-full '>
+                        <div className="flex items-center  text-[1.25rem] max-sm:text-[1rem] max-xsm:text-[1rem]">
+                          <button className="bg-greyfill px-[1em] py-[.5em] max-sm:px-[.5em] max-sm:py-[.2em] border border-greyborder text-greytext">
+                            -
+                          </button>
+                          <p className="px-[1em] py-[.5em] font-light border-b max-sm:px-[.5em] max-sm:py-[.2em] border-t border-greyborder text-greytext ">
+                            2
+                          </p>
+                          <button className="px-[1em] py-[.5em] max-sm:px-[.5em] max-sm:py-[.2em] bg-greyfill border  border-greyborder text-greytext ">
+                            +
+                          </button>
+                        </div>
+                        <p className="text-primaryblack text-[1.25rem] font-bold max-sm:text-[1.25rem]">
+                          $500
                         </p>
-                        <button className="px-[1rem] py-[.5rem] bg-greyfill border  border-greyborder text-greytext ">
-                          +
-                        </button>
                       </div>
-                      <p className="text-primaryblack text-[1.25rem] font-bold max-sm:text-[1.25rem]">
-                        $500
-                      </p>
                     </div>
-                    <div className="flex items-center  justify-betwee max-md:flex-col max-md:items-start gap-[8px] max-sm:flex-col">
-                      <div className="flex flex-col gap-[4px] font-light text-[.875rem] text-primaryblack ">
+                    <div className="flex items-center justify-between max-sm:mt-[1rem] max-md:mt-[1rem] md:flex-col  md:items-start  gap-[8px]">
+                      <div className="flex flex-col gap-[4px] font-light text-[.875rem] text-primaryblack  ">
                         <p>Size: Small</p>
                         <p>Colour: Pink</p>
                       </div>
-                      <div className="flex items-center gap-[.825rem]">
+                      <div className="flex items-center  gap-[.825rem] max-sm:gap-[.5rem]">
                         <button>
-                          <img src={bin_icon} alt="bin icon" />
+                          <img
+                            className="max-sm:h-[20px]"
+                            src={bin_icon}
+                            alt="bin icon"
+                          />
                         </button>
-                        <p className="text-primaryblack">Remove</p>
+                        <p className="text-primaryblack  max-sm:text-[.825rem]">
+                          Remove
+                        </p>
                       </div>
                     </div>
                   </div>
