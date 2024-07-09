@@ -41,8 +41,8 @@ const Shop = () => {
         className="bg-hero-pattern bg-cover bg-center h-[279px] mx-auto max-w-[2200px] w-full"
         style={{ backgroundImage: `url(${hero_img})` }}
       ></div>
-      <div className="w-full max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml mt-[44px] gap-[3.5rem] flex flex-col">
-        <div className="flex items-center justify-between">
+      <div className="w-full max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml mt-[44px] gap-[3.5rem] flex flex-col max-sm:pl-[24px] max-sm:pr-[24px]">
+        <div className="flex items-center justify-between max-sm:w-full max-sm:flex-col max-sm:items-start max-sm:gap-[1.5rem]">
           <div className="flex items-center gap-[1.625rem]">
             <p>Sort by:</p>
             <button className="flex items-center py-[0.625em] px-[0.625em] gap-[6px] border border-solid border-greyborder rounded-md ">
@@ -52,7 +52,7 @@ const Shop = () => {
               </div>
             </button>
           </div>
-          <div className="flex items-center e text-[1.25rem] gap-[2rem]">
+          <div className="flex items-center e text-[1.25rem] gap-[2rem] max-sm:justify-between max-sm:w-full max-sm:text-[1rem] max-xsm:flex-wrap max-xsm:text-[.875rem] max-xsm:gap-[6px]">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -82,7 +82,7 @@ const Shop = () => {
               className={({ isActive }) =>
                 isActive ? 'font-medium text-browntheme' : 'font-light hover:font-medium transition'
               }
-              to="/allproducts/jewelry"
+              to="/allproducts/jewelery"
             >
               Jewelery
             </NavLink>
@@ -104,7 +104,7 @@ const Shop = () => {
 
         <div className="flex gap-[2rem]">
           {/* sidebar */}
-          <div className="border border-solid sticky top-[10px] bg-white border-greyborder w-[360px] px-[30px] py-[30px] h-[600px] rounded-lg">
+          <div className="border border-solid sticky top-[20px] bg-white border-greyborder w-[360px] px-[30px] py-[30px] h-[600px] rounded-lg max-sm:hidden">
             <div className="flex flex-col gap-[2rem]">
               <p>Filter By:</p>
               <div className="flex flex-col gap-[.5rem]">
@@ -206,14 +206,14 @@ const Shop = () => {
           </div>
 
           {/* display-products */}
-          <div className="grid grid-cols-3 gap-[1.825rem]">
+          <div className="grid grid-cols-3 gap-[1.825rem] w-full max-sm:grid-cols-1 max-sm:gap-[1.5rem]">
             {all_products.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col border border-greyborder rounded-md "
+                className="flex flex-col border border-greyborder rounded-md max-sm:w-[80%] max-sm:mx-auto"
               >
                 <div className="relative">
-                  <div className="w-full h-[350px]">
+                  <div className="w-full h-[350px] max-sm:h-[300px]">
                     <img
                       className="w-full h-full rounded-t-md object-fill object-center"
                       src={item.images}
@@ -230,11 +230,11 @@ const Shop = () => {
                 </div>
                 <div className="flex flex-col h-full justify-between px-[1.25rem]   py-[1.4rem]">
                   <div className="flex flex-col gap-[.6rem] ">
-                    <p className="text-greytext">{item.category}</p>
-                    <p className="text-primaryblack text-[1.125rem]">
+                    <p className="text-greytext max-sm:text-[14px]">{item.category}</p>
+                    <p className="text-primaryblack text-[1.125rem] max-sm:textt-[1rem]">
                       {item.name}
                     </p>
-                    <p className="font-bold text-primaryblack text-[1.125rem]">
+                    <p className="font-bold text-primaryblack text-[1.125rem] max-sm:text-[1rem]">
                       ${item.price}
                     </p>
                   </div>
@@ -255,25 +255,25 @@ const Shop = () => {
           
          {/* pagination..nav */}
         <div className='flex items-center justify-center gap-[1.25rem]'>
-            <button className='w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center'>
+            <button className='w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
               <img src={left_chev} alt="left chevron" />
             </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-white text-[1.125rem] font-bold bg-browntheme'>
+            <button className='w-[50px] h-[50px] rounded-md border  text-white text-[1.125rem] font-bold bg-browntheme max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
               1
             </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder'>
+            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
               2
             </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-bold border-greyborder'>
+            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-bold border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
               ...
             </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder'>
+            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
               9
             </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder'>
+            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
               10
             </button>
-            <button className='w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center'>
+            <button className='w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
               <img src={right_chev} alt="left chevron" />
             </button>
 

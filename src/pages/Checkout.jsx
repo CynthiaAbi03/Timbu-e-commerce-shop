@@ -330,7 +330,7 @@ const Checkout = () => {
           </div>
 
           {/* Order Summary */}
-          <div className=" border w-[27%] sticky top-[10px] self-start border-greyborder rounded-md  pt-[1rem] pb-[3rem]">
+          <div className=" border w-[27%] sticky top-[20px] self-start border-greyborder rounded-md  pt-[1rem] pb-[3rem]">
             <div className="flex flex-col gap-[1.25rem]">
               <p className="px-[1.5rem] font-medium text-primaryblack text-[1.5rem]">
                 Order Summary

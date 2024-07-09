@@ -4,7 +4,7 @@ import Slider from '@mui/material/Slider';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 const CustomSlider = styled(Slider)({
-  width: 300,
+  width: '100%',
   color: 'var(--color)',
   '& .MuiSlider-thumb': {
     '&:hover, &.Mui-focusVisible': {

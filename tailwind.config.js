@@ -41,6 +41,11 @@ export default {
     backgroundImage: {
       'hero-pattern': "url('../assets/images/HeroImage.png')"
     },
+    screens: {
+        'sm' : '640px',
+        'md' : '864px',
+        'xsm': '412px'
+    },
     extend: {
      
     },
