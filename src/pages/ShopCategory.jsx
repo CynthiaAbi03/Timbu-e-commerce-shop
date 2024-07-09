@@ -73,7 +73,7 @@ const ShopCategory = () => {
 
             <NavLink
               className={({ isActive }) =>
-                isActive ? 'font-medium text-browntheme' : 'font-light'
+                isActive ? 'font-medium text-browntheme' : 'font-light hover:font-medium transition'
               }
               to="/allproducts/dresses"
             >
@@ -81,7 +81,7 @@ const ShopCategory = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                isActive ? 'font-medium text-browntheme' : 'font-light'
+                isActive ? 'font-medium text-browntheme' : 'font-light hover:font-medium transition'
               }
               to="/allproducts/shoes"
             >
@@ -89,15 +89,15 @@ const ShopCategory = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                isActive ? 'font-medium text-browntheme' : 'font-light'
+                isActive ? 'font-medium text-browntheme' : 'font-light hover:font-medium transition'
               }
-              to="/allproducts/jewelry"
+              to="/allproducts/jewelery"
             >
-              Jewelry
+              Jewelery
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                isActive ? 'font-medium text-browntheme' : 'font-light hover:text-black'
+                isActive ? 'font-medium text-browntheme' : 'font-light hover:font-medium transition'
               }
               to="/allproducts/bag"
             >

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-
+import withMT from "@material-tailwind/react/utils/withMT";
+import colors, { gray } from 'tailwindcss/colors';
 export default {
   content: [
     "./index.html",
@@ -20,7 +21,8 @@ export default {
       pinktheme: '#BC0957',
       footerbg: 'rgba(251,237,226,2.2)',
       greyfill: 'rgba(185,179,179,0.4)',
-      black: '#000000'
+      black: '#000000',
+      gray: colors.gray,
     },
     spacing: {
       'custom-mr' : '50px',

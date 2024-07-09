@@ -27,8 +27,8 @@ const Header = () => {
         <div className="flex gap-[1.625rem] items-center">
           {/* 
            */}
-          <div className="w-[35px] h-[35px]">
-            <Link to='/cart'><img src={cart_icon} alt="" className="w-full h-full" /></Link>
+          <div className="w-[48px] h-[48px] rounded-full bg-none flex itemss-center justify-center hover:bg-gray-200 transition">
+            <Link to='/cart' className='flex items-center justify-center'><img src={cart_icon} alt="" className="h-[30px] w-[30px]" /></Link>
           </div>
           <div className="w-[45px] h-[45px]">
             <img src={user} alt="user icon" className="w-full h-full" />

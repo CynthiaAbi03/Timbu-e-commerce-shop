@@ -20,9 +20,9 @@ const Checkout = () => {
     <div className="min-h-screen">
       <Header />
       <div className="w-full mt-[2rem] max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml flex flex-col gap-[2rem]">
-        <div className="flex items-center gap-[.25rem]">
-          <Link to="/cart">
-            <img src={arrow_back} alt="back arrow" />
+        <div className="flex items-center gap-[.5rem]">
+          <Link className="w-[48px] h-[48px] rounded-full bg-none flex items-center justify-center hover:bg-gray-200 transition" to="/cart">
+            <img className='h-[38px] w-[38px]' src={arrow_back} alt="back arrow" />
           </Link>
           <p className="text-[1.5rem]">Back</p>
         </div>
