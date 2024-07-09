@@ -188,7 +188,7 @@ const Header = () => {
 
             <div className="hidden w-[900px] max-sm:flex max-sm:w-full max-md:w-full max-md:flex ">
               <input
-                className=" w-full border  border-solid border-greyborder rounded-l-md px-[.5rem] py-[.5rem] outline-none"
+                className=" w-full border  border-solid  rounded-l-md px-[.5rem] py-[.5rem] outline-none"
                 type="text"
                 placeholder="Search Here"
               />
