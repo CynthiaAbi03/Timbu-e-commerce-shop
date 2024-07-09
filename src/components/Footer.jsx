@@ -7,7 +7,7 @@ const Footer = () => {
     <div className=" py-[34px] mt-[5rem] bg-footerbg">
       <div className="flex flex-col gap-[4rem]">
         <div className="mx-auto max-w-[2200px] w-full">
-          <div className="flex gap-[8rem] justify-between pr-custom-mr pl-custom-ml max-sm:pl-[1.5rem] max-sm:pr-[1.5rem] max-sm:flex-col max-sm:gap-[2rem]">
+          <div className="flex gap-[8rem] justify-between pr-custom-mr pl-custom-ml max-md:px-[32px] max-sm:pl-[1.5rem] max-sm:pr-[1.5rem] max-sm:flex-col max-sm:gap-[2rem] max-md:flex-col max-md:gap-[1rem] max-xl:flex-col max-xl:gap-[1rem]">
             <div className=" flex flex-col gap-[1.125rem]">
               <div className="flex flex-col gap-[.5rem] ">
                 <div className="text-primaryblack font-Messiri font-bold text-[2rem] max-sm:text-[24px]">
@@ -95,7 +95,7 @@ const Footer = () => {
         <div className="flex flex-col gap-[1.4rem]">
           <div className=" border border-solid border-t-footerline" />
           <div className="mx-auto max-w-[2200px] w-full">
-            <div className="font-light flex justify-between pr-[6rem] pl-[6rem]  max-sm:text-[14px] max-sm:px-[1rem]">
+            <div className="font-light flex justify-between pr-[6rem] pl-[6rem]  max-sm:text-[14px] max-sm:px-[1rem] max-md:px-[1rem]">
               <p>Copyright © 2024 TIMBU </p>
               <p>
                 All rights reserved |{' '}

@@ -24,10 +24,10 @@ const Header = () => {
 
   return (
     <>
-      <div className="relative pr-custom-mr pl-custom-ml py-[20px] max-sm:pr-[24px] max-sm:pl-[24px] max-sm:fixed max-sm:top-[0px] max-sm:right-[0] max-sm:left-[0] max-sm:bg-white max-sm:z-10 max-sm:shadow-md ">
+      <div className="relative pr-custom-mr pl-custom-ml py-[20px] max-md:px-[32px] max-sm:pr-[24px] max-sm:pl-[24px] max-md:fixed max-md:top-[0px] max-md:right-[0] max-md:left-[0] max-md:bg-white max-md:z-10 max-md:shadow-md max-sm:fixed max-sm:top-[0px] max-sm:right-[0] max-sm:left-[0] max-sm:bg-white max-sm:z-10 max-sm:shadow-md ">
         {/* sidebar */}
         <div
-          className={`absolute px-[30px] shadow-sm flex w-[70%] flex-col gap-[1rem] h-screen py-[30px] top-[0px] transition-all duration-300 bg-white border border-solid  ${
+          className={`absolute px-[30px] shadow-sm flex w-[70%] flex-col gap-[1rem] h-screen max-md:h-screen py-[30px] top-[0px] transition-all duration-300 bg-white border border-solid  ${
             isVisible ? 'left-[0px]' : 'left-[-100%]'
           }`}
         >
@@ -46,7 +46,7 @@ const Header = () => {
                 CATEGORY
               </p>
               <div className="flex flex-col gap-[.5rem]">
-                <div className="flex items-center gap-[.5rem]">
+                <div className="flex items-center gap-[.5rem] max-md:text-[1rem]">
                   <Checkbox
                     defaultChecked
                     style={{
@@ -64,7 +64,7 @@ const Header = () => {
                   </label>
                 </div>
                 {filterCategory.map((name, index) => (
-                  <div key={index} className="flex items-center gap-[.5rem]">
+                  <div key={index} className="flex items-center gap-[.5rem] max-md:text-[1rem]">
                     <Checkbox
                       style={{
                         padding: '0px',
@@ -89,7 +89,7 @@ const Header = () => {
               </div>
             </div>
             <div className="flex flex-col gap-[.5rem]">
-              <p className="font-medium text-[.875rem] text-primaryblack">
+              <p className="font-medium text-[.875rem] text-primaryblack max-md:text-[1rem]">
                 SIZES
               </p>
               <div className="flex flex-col gap-[.5rem]">
@@ -118,7 +118,7 @@ const Header = () => {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-[.5rem]">
+            <div className="flex flex-col gap-[.5rem] max-md:text-[1rem]">
               <p className="font-medium text-[14px]  text-primaryblack">
                 PRICES
               </p>
@@ -142,21 +142,23 @@ const Header = () => {
 
         {/* main header */}
         <div className="mx-auto max-w-[2200px] w-full flex items-center justify-between">
-          <div className="flex flex-col w-full max-sm:gap-[.5rem]">
+          <div className="flex flex-col w-full max-sm:gap-[.5rem] max-md:gap-[.5rem]">
             <div className="flex items-center w-full justify-between">
-              <div className="flex items-center gap-[.5rem]">
+              <div className="flex items-center gap-[.5rem] p-[0px]">
                 <div
                   onClick={openSidebar}
-                  className="hidden h-[25px] w-[25px] max-sm:flex max-sm:items-center max-sm:justify-center"
+                  className="hidden h-[25px]  w-[25px] max-sm:flex max-sm:items-center max-sm:justify-center max-md:flex max-md:items-center max-md:justify-center"
                 >
-                  <img src={toggle_icon} className="w-full" alt="toggle_icon" />
+                  <img src={toggle_icon} className="w-full h-full" alt="toggle_icon" />
                 </div>
                 <p className="font-Messiri flex self-start p-[0px] text-[2rem]  text-primaryblack font-bold max-sm:text-[1.8rem]">
                   TIMBU
                 </p>
               </div>
 
-              <div className="flex w-[900px] max-sm:hidden ">
+              {/* search bar  */}
+
+              <div className="flex w-[900px] max-sm:hidden max-md:hidden">
                 <input
                   className=" w-full border  border-solid border-greyborder rounded-l-md px-[.5rem] py-[.5rem] outline-none"
                   type="text"
@@ -170,12 +172,12 @@ const Header = () => {
                   />
                 </div>
               </div>
-              <div className="flex gap-[1.625rem] items-center max-sm:gap-[.5rem]">
+              <div className="flex gap-[1.625rem] items-center max-sm:gap-[.5rem] max-md:gap-[1rem]">
                 {/*
                  */}
-                <div className="w-[48px] h-[48px] max-sm:w-[30px] max-sm:h-[30px]   rounded-full bg-none flex itemss-center justify-center hover:bg-gray-200 transition">
+                <div className="w-[48px] h-[48px] max-sm:w-[30px] max-sm:h-[30px] max-md:w-[35px] max-md:h-[35px]  rounded-full bg-none flex itemss-center justify-center hover:bg-gray-200 transition">
                   <Link to="/cart" className="flex items-center justify-center">
-                    <img src={cart_icon} alt="" className="h-[30px] w-[30px] max-sm:w-[30px] max-sm:h-[30px] " />
+                    <img src={cart_icon} alt="" className="h-[30px] w-[30px] max-sm:w-[30px] max-sm:h-[30px] max-md:w-full max-md:h-full " />
                   </Link>
                 </div>
                 <div className="w-[45px] h-[45px] max-sm:w-[35px] max-sm:h-[35px]">
@@ -183,7 +185,8 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden w-[900px] max-sm:flex max-sm:w-full ">
+
+            <div className="hidden w-[900px] max-sm:flex max-sm:w-full max-md:w-full max-md:flex ">
               <input
                 className=" w-full border  border-solid border-greyborder rounded-l-md px-[.5rem] py-[.5rem] outline-none"
                 type="text"

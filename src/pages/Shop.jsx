@@ -41,8 +41,10 @@ const Shop = () => {
         className="bg-hero-pattern bg-cover bg-center h-[279px] mx-auto max-w-[2200px] w-full"
         style={{ backgroundImage: `url(${hero_img})` }}
       ></div>
-      <div className="w-full max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml mt-[44px] gap-[3.5rem] flex flex-col max-sm:pl-[24px] max-sm:pr-[24px]">
-        <div className="flex items-center justify-between max-sm:w-full max-sm:flex-col max-sm:items-start max-sm:gap-[1.5rem]">
+      <div className="w-full max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml mt-[44px] gap-[3.5rem] flex flex-col max-sm:pl-[24px] max-sm:pr-[24px] max-md:px-[32px]">
+
+        {/* top nav-area */}
+        <div className="flex items-center justify-between max-sm:w-full max-sm:flex-col  max-md:flex-col max-sm:items-start max-md:items-start max-sm:gap-[1.5rem] max-md:gap-[1.5rem] ">
           <div className="flex items-center gap-[1.625rem]">
             <p>Sort by:</p>
             <button className="flex items-center py-[0.625em] px-[0.625em] gap-[6px] border border-solid border-greyborder rounded-md ">
@@ -52,7 +54,7 @@ const Shop = () => {
               </div>
             </button>
           </div>
-          <div className="flex items-center e text-[1.25rem] gap-[2rem] max-sm:justify-between max-sm:w-full max-sm:text-[1rem] max-xsm:flex-wrap max-xsm:text-[.875rem] max-xsm:gap-[6px]">
+          <div className="flex items-center e text-[1.25rem] gap-[2rem] max-md:justify-between max-md:w-full max-sm:justify-between max-sm:w-full max-sm:text-[1rem] max-xsm:flex-wrap max-xsm:text-[.875rem] max-xsm:gap-[6px]">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -104,7 +106,7 @@ const Shop = () => {
 
         <div className="flex gap-[2rem]">
           {/* sidebar */}
-          <div className="border border-solid sticky top-[20px] bg-white border-greyborder w-[360px] px-[30px] py-[30px] h-[600px] rounded-lg max-sm:hidden">
+          <div className="border border-solid sticky top-[20px] bg-white border-greyborder w-[360px] px-[30px] py-[30px] h-[600px] rounded-lg max-sm:hidden max-md:hidden">
             <div className="flex flex-col gap-[2rem]">
               <p>Filter By:</p>
               <div className="flex flex-col gap-[.5rem]">
@@ -206,14 +208,14 @@ const Shop = () => {
           </div>
 
           {/* display-products */}
-          <div className="grid grid-cols-3 gap-[1.825rem] w-full max-sm:grid-cols-1 max-sm:gap-[1.5rem]">
+          <div className="grid grid-cols-3 gap-[1.825rem] w-full max-sm:grid-cols-1 max-sm:gap-[1.5rem] max-md:grid-cols-2 max-md:gap-[1.5rem]">
             {all_products.map((item, index) => (
               <div
                 key={index}
                 className="flex flex-col border border-greyborder rounded-md max-sm:w-[80%] max-sm:mx-auto"
               >
                 <div className="relative">
-                  <div className="w-full h-[350px] max-sm:h-[300px]">
+                  <div className="w-full h-[350px] max-sm:h-[300px] max-md:h-[325px]">
                     <img
                       className="w-full h-full rounded-t-md object-fill object-center"
                       src={item.images}

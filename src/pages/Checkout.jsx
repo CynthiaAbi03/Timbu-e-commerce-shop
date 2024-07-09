@@ -19,24 +19,24 @@ const Checkout = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <div className="w-full mt-[2rem] max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml flex flex-col gap-[2rem]">
+      <div className="w-full mt-[2rem] max-sm:mt-[10rem] max-md:mt-[10rem] max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml max-sm:px-[24px] max-md:px-[32px] flex flex-col gap-[2rem]">
         <div className="flex items-center gap-[.5rem]">
-          <Link className="w-[48px] h-[48px] rounded-full bg-none flex items-center justify-center hover:bg-gray-200 transition" to="/cart">
-            <img className='h-[38px] w-[38px]' src={arrow_back} alt="back arrow" />
+          <Link className="w-[48px] h-[48px] max-sm:w-[40px] max-sm:h-[40px] rounded-full bg-none flex items-center justify-center hover:bg-gray-200 transition" to="/cart">
+            <img className='h-[38px] w-[38px] max-sm:w-[34px] max-sm:h-[34px]' src={arrow_back} alt="back arrow" />
           </Link>
-          <p className="text-[1.5rem]">Back</p>
+          <p className="text-[1.5rem] max-sm:text-[1.25rem]">Back</p>
         </div>
 
         {/* body-cart */}
-        <div className="flex justify-between w-full gap-[3rem]">
+        <div className="flex justify-between w-full gap-[3rem] max-sm:flex-col max-sm:gap-[1rem] max-md:flex-col max-md:gap-[1rem]">
           {/* payments details and billing information */}
-          <div className=" w-[73%] flex flex-col self-start gap-[2rem]">
+          <div className=" w-[73%] flex flex-col self-start gap-[2rem] max-sm:w-full max-md:w-full">
             {/* billing information */}
             <div className="flex w-full flex-col gap-[1.5rem]">
               <p className="text-primaryblack text-[1.5rem]">
                 Billing Information
               </p>
-              <div className="flex items-center gap-[1rem]">
+              <div className="flex items-center gap-[1rem] max-sm:flex-col max-sm:gap-[1rem]">
                 <div className="flex flex-col w-full gap-[.5rem]">
                   <label htmlFor="">First Name*</label>
                   <input
@@ -62,7 +62,7 @@ const Checkout = () => {
                   placeholder="No, 1, Rakiat street off ogundipe Lagos"
                 />
               </div>
-              <div className="flex items-center gap-[1rem]">
+              <div className="flex items-center gap-[1rem] max-sm:flex-col max-sm:gap-[1rem]">
                 <div className="flex flex-col w-full gap-[.5rem]">
                   <label htmlFor="">City*</label>
                   <input
@@ -80,7 +80,7 @@ const Checkout = () => {
                   />
                 </div>
               </div>
-              <div className="flex items-center gap-[1rem]">
+              <div className="flex items-center gap-[1rem] max-sm:flex-col max-sm:gap-[1rem]">
                 <div className="flex flex-col w-full gap-[.5rem]">
                   <label htmlFor="">Country*</label>
                   <input
@@ -98,7 +98,7 @@ const Checkout = () => {
                   />
                 </div>
               </div>
-              <div className="flex items-center gap-[1rem]">
+              <div className="flex items-center gap-[1rem] max-sm:flex-col max-sm:gap-[1rem]">
                 <div className="flex flex-col w-full gap-[.5rem]">
                   <label htmlFor="">Email*</label>
                   <input
@@ -213,12 +213,12 @@ const Checkout = () => {
                       }}
                       defaultChecked
                     />
-                    <p className="font-medium text-primaryblack text-[1.25rem]">
+                    <p className="font-medium text-primaryblack text-[1.25rem] ">
                       {' '}
                       Credit Card
                     </p>
                   </div>
-                  <div className="flex items-center gap-[1rem]">
+                  <div className="flex items-center gap-[1rem] max-sm:flex-col max-sm:gap-[1rem]">
                     <div className="flex flex-col w-full gap-[.5rem]">
                       <label htmlFor="">Name on Card*</label>
                       <input
@@ -236,7 +236,7 @@ const Checkout = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex items-center gap-[1rem]">
+                  <div className="flex items-center gap-[1rem] max-sm:flex-col max-sm:gap-[1rem]">
                     <div className="flex flex-col w-full gap-[.5rem]">
                       <label htmlFor="">Expiry Date</label>
                       <div className="flex space-between gap-[1rem] rounded-md border border-greyborder w-full px-[.5rem] py-[.5rem] ">
@@ -275,7 +275,7 @@ const Checkout = () => {
                         },
                       }}
                     />
-                    <p className="font-medium text-primaryblack text-[1.25rem]">
+                    <p className="font-medium text-primaryblack text-[1.25rem] max-sm:text-[1rem] max-sm:font-bold">
                       {' '}
                       PayPal
                     </p>
@@ -298,7 +298,7 @@ const Checkout = () => {
                         },
                       }}
                     />
-                    <p className="font-medium text-primaryblack text-[1.25rem]">
+                    <p className="font-medium text-primaryblack text-[1.25rem] max-sm:text-[1rem] max-sm:font-bold">
                       {' '}
                       Payoneer
                     </p>
@@ -330,32 +330,32 @@ const Checkout = () => {
           </div>
 
           {/* Order Summary */}
-          <div className=" border w-[27%] sticky top-[20px] self-start border-greyborder rounded-md  pt-[1rem] pb-[3rem]">
+          <div className=" border w-[27%] max-md:w-full sticky top-[20px] self-start border-greyborder rounded-md  pt-[1rem] pb-[3rem] max-sm:static max-sm:w-full max-sm:pb-[4rem] max-md:pb-[4rem]">
             <div className="flex flex-col gap-[1.25rem]">
-              <p className="px-[1.5rem] font-medium text-primaryblack text-[1.5rem]">
+              <p className="px-[1.5rem] font-medium text-primaryblack text-[1.5rem] max-sm:px-[3rem] max-sm:text-[1.5rem]">
                 Order Summary
               </p>
               <div className="flex flex-col gap-[1rem] ">
-                <div className="px-[1.5rem] flex justify-between items-center text-[1.25rem] text-primaryblack">
+                <div className="px-[1.5rem] flex justify-between items-center text-[1.25rem] text-primaryblack max-sm:px-[3rem] max-sm:text-[1.25rem]">
                   <p>Items Subtotal</p>
                   <p>$500</p>
                 </div>
-                <div className=" px-[1.5rem] flex justify-between items-center text-[1.25rem] text-primaryblack">
+                <div className=" px-[1.5rem] flex justify-between items-center text-[1.25rem] text-primaryblack max-sm:px-[3rem] max-sm:text-[1.25rem]">
                   <p>Tax</p>
                   <p>$500</p>
                 </div>
                 <div className="border-t border-t-greyborder"></div>
-                <div className="px-[1.5rem] flex justify-between items-center font-bold text-primaryblack text-[2rem]">
+                <div className="px-[1.5rem] flex justify-between items-center font-bold text-primaryblack text-[2rem] max-sm:px-[3rem] max-sm:text-[1.5rem]">
                   <p>Total</p>
                   <p>$500</p>
                 </div>
                 <Link
                   to="/"
-                  className="bg-browntheme text-center  mx-[1.5rem] mt-[1rem] py-[.25rem] w-[full] rounded-md text-white font-medium text-[1.25rem] hover:bg-hoverbrown hover:transition "
+                  className="bg-browntheme text-center  mx-[1.5rem] mt-[1rem] max-sm:mx-[3rem] max-sm:py-[.5rem] py-[.25rem] w-[full] rounded-md text-white font-medium text-[1.25rem] hover:bg-hoverbrown hover:transition "
                 >
                   Place Order
                 </Link>
-                <div className="flex items-center mx-[1.5rem] gap-[.5rem]">
+                <div className="flex items-center mx-[1.5rem] max-sm:mx-[3rem] gap-[.5rem]">
                   <input
                     type="checkbox"
                     name=""

@@ -12,7 +12,7 @@ export default {
       hoverbrown: '#904504',
       white : '#FFFFFF',
       greyborder : 'rgba(79, 79, 79, 0.3)',
-      greytext: 'rgba(79, 79, 79, 0.8)',
+      greytext: 'rgba(79, 79, 79, 0.9)',
       primaryblack : '#121212',
       secondaryblack : '#4f4f4f',
       footerline: 'rgba(18,18,18,0.2)',
@@ -42,9 +42,10 @@ export default {
       'hero-pattern': "url('../assets/images/HeroImage.png')"
     },
     screens: {
-        'sm' : '640px',
-        'md' : '864px',
-        'xsm': '412px'
+        'sm' : '720px',
+        'md' : '1024px',
+        'xl': '1320px',
+        'xsm': '440px'
     },
     extend: {
      
