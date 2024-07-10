@@ -82,13 +82,13 @@ const Cart = () => {
                             +
                           </button>
                         </div>
-                        <p className="text-primaryblack text-[1.25rem] font-bold max-sm:text-[1.25rem]">
+                        <p className="text-primaryblack  text-[1.25rem] font-bold max-sm:text-[1.25rem]">
                           $500
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between max-sm:mt-[1rem] max-md:mt-[1rem] md:flex-col  md:items-start  gap-[8px]">
-                      <div className="flex flex-col gap-[4px] font-light text-[.875rem] text-primaryblack  ">
+                    <div className="flex items-center justify-between max-sm:mt-[1rem] max-md:mt-[1rem] min-md:flex-col  md:items-start  gap-[8px]">
+                      <div className="flex flex-col  gap-[4px] font-light text-[.875rem] text-primaryblack  ">
                         <p>Size: Small</p>
                         <p>Colour: Pink</p>
                       </div>
@@ -100,7 +100,7 @@ const Cart = () => {
                             alt="bin icon"
                           />
                         </button>
-                        <p className="text-primaryblack  max-sm:text-[.825rem]">
+                        <p className="text-redtheme  max-sm:text-[.825rem]">
                           Remove
                         </p>
                       </div>

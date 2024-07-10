@@ -22,6 +22,7 @@ export default {
       footerbg: 'rgba(251,237,226,2.2)',
       greyfill: 'rgba(185,179,179,0.4)',
       black: '#000000',
+      redtheme: '#B82707',
       gray: colors.gray,
     },
     spacing: {

@@ -158,13 +158,13 @@ const Header = () => {
 
               {/* search bar  */}
 
-              <div className="flex w-[900px] max-sm:hidden max-md:hidden">
+              <div className="flex w-[900px] shadow-sm  border border-gray-200 border-solid rounded-lg  max-sm:hidden max-md:hidden">
                 <input
-                  className=" w-full border  border-solid border-greyborder rounded-l-md px-[.5rem] py-[.5rem] outline-none"
+                  className=" w-full px-[.5rem] my-[4pxrem] mx-[.5rem]  py-[.5rem] outline-none"
                   type="text"
                   placeholder="Search Here"
                 />
-                <div className="flex cursor-pointer items-center px-[.6rem] rounded-r-md bg-browntheme">
+                <div className="flex cursor-pointer items-center px-[.6rem] rounded-r-lg bg-browntheme hover:bg-hoverbrown transition">
                   <img
                     style={{ fill: 'white' }}
                     src={search_icon}
@@ -186,13 +186,15 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="hidden w-[900px] max-sm:flex max-sm:w-full max-md:w-full max-md:flex ">
+
+                  {/* smaller screen search bar */}
+            <div className="hidden w-[full] border border-gray-200 border-solid rounded-lg max-sm:flex max-sm:w-full max-md:w-full max-md:flex ">
               <input
-                className=" w-full border  border-solid  rounded-l-md px-[.5rem] py-[.5rem] outline-none"
+                className=" w-full  my-[4pxrem] mx-[.5rem] px-[.5rem] py-[.5rem] outline-none"
                 type="text"
                 placeholder="Search Here"
               />
-              <div className="flex cursor-pointer items-center px-[.6rem] rounded-r-md bg-browntheme">
+              <div className="flex cursor-pointer items-center px-[.6rem] rounded-r-lg bg-browntheme hover:bg-hoverbrown transition">
                 <img
                   style={{ fill: 'white' }}
                   src={search_icon}
