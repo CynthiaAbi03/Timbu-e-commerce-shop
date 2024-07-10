@@ -58,7 +58,7 @@ const Cart = () => {
                   key={index}
                   className="py-[.8rem] w-full h-full px-[1.25rem] flex  gap-[1rem] "
                 >
-                  <div className="h-[140px] md:h-full ">
+                  <div className="h-[140px] max-sm:h-full max-xsm:h-full md:h-full ">
                     <img
                       className="h-full w-full rounded-[4px]"
                       src={item.image}
@@ -67,7 +67,7 @@ const Cart = () => {
                   </div>
                   <div className="flex flex-col w-full justify-between  ">
                     <div className="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[1rem] max-sm:flex-col max-sm:items-start max-sm:gap-[1rem]">
-                      <p className="text-[1.25rem] flex-1 text-primaryblack max-sm:text-[.5rem] max-xsm:text-[1rem]">
+                      <p className="text-[1.25rem] flex-1 text-primaryblack max-sm:text-[1rem] max-xsm:text-[1rem]">
                         {item.name}
                       </p>
                       <div className='flex items-center justify-between flex-1 w-full '>
