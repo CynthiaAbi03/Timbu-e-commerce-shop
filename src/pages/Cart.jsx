@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import Header from '../components/Header';
 import { useEffect } from 'react';
 import Footer from '../components/Footer';
@@ -6,7 +7,9 @@ import { Link } from 'react-router-dom';
 import product_1 from '../assets/images/product_1.png';
 import bin_icon from '../assets/icons/bin_icon.svg';
 import arrow_back from '../assets/icons/arrow_back.svg';
+
 const Cart = () => {
+  const [productQty, setProductQty] = useState(2);
   const cartProduct = [
     {
       image: product_1,
@@ -28,6 +31,16 @@ const Cart = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleProductAdd = () => {
+    setProductQty((p) => p + 1);
+  };
+  const handleProductSubstract = () => {
+    if (productQty > 1) {
+      setProductQty((p) => p - 1);
+    } else 
+    setProductQty(1);
+  };
 
   return (
     <div className="min-h-screen">
@@ -70,15 +83,21 @@ const Cart = () => {
                       <p className="text-[1.25rem] flex-1 text-primaryblack max-sm:text-[1rem] max-xsm:text-[1rem]">
                         {item.name}
                       </p>
-                      <div className='flex items-center justify-between flex-1 w-full '>
+                      <div className="flex items-center justify-between flex-1 w-full ">
                         <div className="flex items-center  text-[1.25rem] max-sm:text-[1rem] max-xsm:text-[1rem]">
-                          <button className="bg-greyfill px-[1em] py-[.5em] max-sm:px-[.5em] max-sm:py-[.2em] border border-greyborder text-greytext">
+                          <button
+                            onClick={handleProductSubstract}
+                            className="bg-greyfill px-[1em] py-[.5em] max-sm:px-[.5em] max-sm:py-[.2em] border border-greyborder text-greytext"
+                          >
                             -
                           </button>
                           <p className="px-[1em] py-[.5em] font-light border-b max-sm:px-[.5em] max-sm:py-[.2em] border-t border-greyborder text-greytext ">
-                            2
+                            {productQty}
                           </p>
-                          <button className="px-[1em] py-[.5em] max-sm:px-[.5em] max-sm:py-[.2em] bg-greyfill border  border-greyborder text-greytext ">
+                          <button
+                            onClick={handleProductAdd}
+                            className="px-[1em] py-[.5em] max-sm:px-[.5em] max-sm:py-[.2em] bg-greyfill border  border-greyborder text-greytext "
+                          >
                             +
                           </button>
                         </div>

@@ -46,7 +46,7 @@ const ShopCategory = () => {
     <div className="min-h-screen">
        <Header />
       <div
-        className="bg-hero-pattern bg-cover bg-center h-[279px] mx-auto max-w-[2200px] w-full"
+        className="bg-hero-pattern bg-contain bg-center h-[279px] mx-auto max-w-[2200px] w-full"
         style={{ backgroundImage: `url(${hero_img})` }}
       ></div>
       <div className="w-full max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml mt-[44px] gap-[3.5rem] flex flex-col max-sm:pl-[24px] max-sm:pr-[24px] max-md:px-[32px]">
@@ -220,7 +220,7 @@ const ShopCategory = () => {
             {filteredProducts.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col border border-greyborder rounded-md max-sm:w-[80%] max-sm:mx-auto"
+                className="flex flex-col border border-greyborder rounded-md max-sm:w-[80%] max-sm:mx-auto cursor-pointer shadow-none hover:shadow-lg transition"
               >
                 <div className="relative">
                   <div className="w-full h-[350px] max-sm:h-[300px] max-md:h-[325px]">
