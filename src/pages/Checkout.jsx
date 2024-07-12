@@ -338,16 +338,16 @@ const Checkout = () => {
               <div className="flex flex-col gap-[1rem] ">
                 <div className="px-[1.5rem] flex justify-between items-center text-[1.25rem] text-primaryblack max-sm:px-[3rem] max-sm:text-[1.25rem]">
                   <p>Items Subtotal</p>
-                  <p>$500</p>
+                  <p>$400</p>
                 </div>
                 <div className=" px-[1.5rem] flex justify-between items-center text-[1.25rem] text-primaryblack max-sm:px-[3rem] max-sm:text-[1.25rem]">
                   <p>Tax</p>
-                  <p>$500</p>
+                  <p>$400</p>
                 </div>
                 <div className="border-t border-t-greyborder"></div>
                 <div className="px-[1.5rem] flex justify-between items-center font-bold text-primaryblack text-[2rem] max-sm:px-[3rem] max-sm:text-[1.5rem]">
                   <p>Total</p>
-                  <p>$500</p>
+                  <p>$400</p>
                 </div>
                 <Link
                   to="/"

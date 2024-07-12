@@ -10,36 +10,65 @@ import arrow_back from '../assets/icons/arrow_back.svg';
 
 const Cart = () => {
   const [productQty, setProductQty] = useState(2);
-  const cartProduct = [
+  const [totalProduct, setTotalProduct] = useState();
+  const [cartProduct, setCartProduct] = useState([
     {
       image: product_1,
       name: 'Ladies Off Shoulder Slit Hem Cable Party Dress with Belt',
+      quantity: 1,
     },
     {
       image: product_1,
       name: 'Ladies Off Shoulder Slit Hem Cable Party Dress with Belt',
+      quantity: 2,
     },
     {
       image: product_1,
       name: 'Ladies Off Shoulder Slit Hem Cable Party Dress with Belt',
+      quantity: 1,
     },
     {
       image: product_1,
       name: 'Ladies Off Shoulder Slit Hem Cable Party Dress with Belt',
+      quantity: 2,
     },
-  ];
+  ]);
+
+  useEffect(() => {
+    const totalProductQty = () => {
+      let total = 0;
+      if (cartProduct && cartProduct.length > 0) {
+        for (let item of cartProduct) {
+          total += item.quantity;
+        }
+      }
+      setTotalProduct(total * 200);
+    };
+    totalProductQty();
+  }, [cartProduct]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleProductAdd = () => {
-    setProductQty((p) => p + 1);
+  const handleProductAdd = (index) => {
+    const updatedCart = cartProduct.map((item, i) => {
+      if (i === index) {
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+    setCartProduct(updatedCart);
   };
-  const handleProductSubstract = () => {
-    if (productQty > 1) {
-      setProductQty((p) => p - 1);
-    } else 
-    setProductQty(1);
+
+  const handleProductSubstract = (index) => {
+    const updatedCart = cartProduct.map((item, i) => {
+      if (i === index && item.quantity > 0) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    });
+    setCartProduct(updatedCart);
   };
 
   return (
@@ -86,23 +115,23 @@ const Cart = () => {
                       <div className="flex items-center justify-between flex-1 w-full ">
                         <div className="flex items-center  text-[1.25rem] max-sm:text-[1rem] max-xsm:text-[1rem]">
                           <button
-                            onClick={handleProductSubstract}
+                            onClick={() => handleProductSubstract(index)}
                             className="bg-greyfill px-[1em] py-[.5em] max-sm:px-[.5em] max-sm:py-[.2em] border border-greyborder text-greytext"
                           >
                             -
                           </button>
                           <p className="px-[1em] py-[.5em] font-light border-b max-sm:px-[.5em] max-sm:py-[.2em] border-t border-greyborder text-greytext ">
-                            {productQty}
+                            {item.quantity}
                           </p>
                           <button
-                            onClick={handleProductAdd}
+                            onClick={() => handleProductAdd(index)}
                             className="px-[1em] py-[.5em] max-sm:px-[.5em] max-sm:py-[.2em] bg-greyfill border  border-greyborder text-greytext "
                           >
                             +
                           </button>
                         </div>
                         <p className="text-primaryblack  text-[1.25rem] font-bold max-sm:text-[1.25rem]">
-                          $500
+                          ${item.quantity * 200}
                         </p>
                       </div>
                     </div>
@@ -139,16 +168,16 @@ const Cart = () => {
               <div className="flex flex-col gap-[1rem] ">
                 <div className="px-[1.5rem] max-sm:px-[3rem] flex justify-between items-center text-[1.25rem] max-sm:text-[1.25rem] text-primaryblack">
                   <p>Items Subtotal</p>
-                  <p>$500</p>
+                  <p>${totalProduct}</p>
                 </div>
                 <div className=" px-[1.5rem]  max-sm:px-[3rem] flex justify-between items-center text-[1.25rem] max-sm:text-[1.25rem] text-primaryblack">
                   <p>Tax</p>
-                  <p>$500</p>
+                  <p>$50</p>
                 </div>
                 <div className="border-t border-t-greyborder"></div>
                 <div className="px-[1.5rem]  max-sm:px-[3rem]  flex justify-between items-center font-bold text-primaryblack text-[2rem]">
                   <p>Total</p>
-                  <p>$500</p>
+                  <p>${totalProduct+50}</p>
                 </div>
                 <Link
                   to="/checkout"

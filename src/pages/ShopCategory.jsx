@@ -14,7 +14,6 @@ import left_chev from '../assets/icons/left_chev.svg';
 import right_chev from '../assets/icons/right_chev.svg';
 
 const ShopCategory = () => {
-
   const navigate = useNavigate();
   const { mainCategory } = useParams();
   // console.log(mainCategory, 'hello')
@@ -27,30 +26,27 @@ const ShopCategory = () => {
   function valuetext(value) {
     return `${value}°C`;
   }
-  const filteredProducts = all_products.filter(product => product.category.toLowerCase() === mainCategory.toLowerCase());
+  const filteredProducts = all_products.filter(
+    (product) => product.category.toLowerCase() === mainCategory.toLowerCase()
+  );
 
-
- 
-
-  
   // const scrollToTopAndNavigate = (event, history) => {
   //   event.preventDefault();
   //   window.scrollTo({ top: 0, behavior: 'smooth' });
-  
+
   //   setTimeout(() => {
   //     navigate.push('/cart');
-  //   }, 500); 
+  //   }, 500);
   // };
 
   return (
     <div className="min-h-screen">
-       <Header />
+      <Header />
       <div
         className="bg-hero-pattern bg-contain bg-center h-[279px] mx-auto max-w-[2200px] w-full"
         style={{ backgroundImage: `url(${hero_img})` }}
       ></div>
       <div className="w-full max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml mt-[44px] gap-[3.5rem] flex flex-col max-sm:pl-[24px] max-sm:pr-[24px] max-md:px-[32px]">
-
         {/* top nav-area */}
         <div className="flex items-center justify-between max-sm:w-full max-sm:flex-col  max-md:flex-col max-sm:items-start max-md:items-start max-sm:gap-[1.5rem] max-md:gap-[1.5rem] ">
           <div className="flex items-center gap-[1.625rem]">
@@ -74,7 +70,9 @@ const ShopCategory = () => {
 
             <NavLink
               className={({ isActive }) =>
-                isActive ? 'font-medium text-browntheme' : 'font-light hover:font-medium transition'
+                isActive
+                  ? 'font-medium text-browntheme'
+                  : 'font-light hover:font-medium transition'
               }
               to="/allproducts/dresses"
             >
@@ -82,7 +80,9 @@ const ShopCategory = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                isActive ? 'font-medium text-browntheme' : 'font-light hover:font-medium transition'
+                isActive
+                  ? 'font-medium text-browntheme'
+                  : 'font-light hover:font-medium transition'
               }
               to="/allproducts/shoes"
             >
@@ -90,7 +90,9 @@ const ShopCategory = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                isActive ? 'font-medium text-browntheme' : 'font-light hover:font-medium transition'
+                isActive
+                  ? 'font-medium text-browntheme'
+                  : 'font-light hover:font-medium transition'
               }
               to="/allproducts/jewelery"
             >
@@ -98,7 +100,9 @@ const ShopCategory = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                isActive ? 'font-medium text-browntheme' : 'font-light hover:font-medium transition'
+                isActive
+                  ? 'font-medium text-browntheme'
+                  : 'font-light hover:font-medium transition'
               }
               to="/allproducts/bag"
             >
@@ -148,9 +152,9 @@ const ShopCategory = () => {
                           borderWidth: '1px',
                         }}
                         sx={{
-                          color: '', 
+                          color: '',
                           '&.Mui-checked': {
-                            color: '#b05405', 
+                            color: '#b05405',
                           },
                         }}
                       />
@@ -178,12 +182,11 @@ const ShopCategory = () => {
                           borderWidth: '1px',
                         }}
                         sx={{
-                          color: '', 
+                          color: '',
                           '&.Mui-checked': {
-                            color: '#b05405', 
+                            color: '#b05405',
                           },
                         }}
-                        
                       />
                       <label
                         htmlFor={name}
@@ -240,7 +243,9 @@ const ShopCategory = () => {
                 </div>
                 <div className="flex flex-col h-full justify-between px-[1.25rem]   py-[1.4rem]">
                   <div className="flex flex-col gap-[.6rem] ">
-                    <p className="text-greytext max-sm:text-[14px]">{item.category}</p>
+                    <p className="text-greytext max-sm:text-[14px]">
+                      {item.category}
+                    </p>
                     <p className="text-primaryblack text-[1.125rem] max-sm:textt-[1rem]">
                       {item.name}
                     </p>
@@ -250,7 +255,7 @@ const ShopCategory = () => {
                   </div>
                   <div className="flex justify-center w-full mt-[1rem]">
                     <Link
-                    //  onClick={(event) => scrollToTopAndNavigate(event, history)}
+                      //  onClick={(event) => scrollToTopAndNavigate(event, history)}
                       to="/cart"
                       className="bg-browntheme py-[.5rem] text-center text-white w-full font-medium rounded-md hover:bg-hoverbrown hover:transition"
                     >
@@ -262,34 +267,31 @@ const ShopCategory = () => {
             ))}
           </div>
         </div>
-          
-         {/* pagination..nav */}
-        <div className='flex items-center justify-center gap-[1.25rem]'>
-            <button className='w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
-              <img src={left_chev} alt="left chevron" />
-            </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-white text-[1.125rem] font-bold bg-browntheme max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
-              1
-            </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
-              2
-            </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-bold border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
-              ...
-            </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
-              9
-            </button>
-            <button className='w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
-              10
-            </button>
-            <button className='w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]'>
-              <img src={right_chev} alt="left chevron" />
-            </button>
 
+        {/* pagination..nav */}
+        <div className="flex items-center justify-center gap-[1.25rem]">
+          <button className="w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]">
+            <img src={left_chev} alt="left chevron" />
+          </button>
+          <button className="w-[50px] h-[50px] rounded-md border  text-white text-[1.125rem] font-bold bg-browntheme max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]">
+            1
+          </button>
+          <button className="w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]">
+            2
+          </button>
+          <button className="w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-bold border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]">
+            ...
+          </button>
+          <button className="w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]">
+            9
+          </button>
+          <button className="w-[50px] h-[50px] rounded-md border  text-greytext text-[1.125rem] font-medium border-greyborder max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]">
+            10
+          </button>
+          <button className="w-[50px] h-[50px] border rounded-md border-greyborder flex items-center justify-center max-sm:h-[40px] max-sm:w-[40px] max-sm:text-[14px]">
+            <img src={right_chev} alt="left chevron" />
+          </button>
         </div>
-
-
       </div>
       <Footer />
     </div>
@@ -297,4 +299,3 @@ const ShopCategory = () => {
 };
 
 export default ShopCategory;
-
