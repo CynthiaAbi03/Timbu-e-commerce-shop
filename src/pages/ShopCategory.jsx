@@ -9,14 +9,15 @@ import heart_icon from '../assets/icons/heart_icon.svg';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import chevron_down from '../assets/icons/chevron-down.svg';
-import all_products from '../assets/all_products';
 import left_chev from '../assets/icons/left_chev.svg';
 import right_chev from '../assets/icons/right_chev.svg';
+import Item from '../components/styles/Item';
+import { ShopContext } from '../context/ShopContextss';
 
 const ShopCategory = () => {
   const navigate = useNavigate();
   const { mainCategory } = useParams();
-  // console.log(mainCategory, 'hello')
+  const { all_product, showAlert, setShowAlert } = useContext(ShopContext);
   const filterCategory = ['Women', 'Children'];
   const filterSizes = ['Small', 'Medium', 'Large', 'Extra Large'];
   const [value, setValue] = useState(500);
@@ -26,7 +27,7 @@ const ShopCategory = () => {
   function valuetext(value) {
     return `${value}°C`;
   }
-  const filteredProducts = all_products.filter(
+  const filteredProducts = all_product.filter(
     (product) => product.category.toLowerCase() === mainCategory.toLowerCase()
   );
 
@@ -64,6 +65,7 @@ const ShopCategory = () => {
               className={({ isActive }) =>
                 isActive ? 'font-medium text-browntheme' : 'font-light'
               }
+              onClick={() => setShowAlert(false)}
             >
               All Products
             </NavLink>
@@ -75,6 +77,7 @@ const ShopCategory = () => {
                   : 'font-light hover:font-medium transition'
               }
               to="/allproducts/dresses"
+              onClick={() => setShowAlert(false)}
             >
               Dresses
             </NavLink>
@@ -85,6 +88,7 @@ const ShopCategory = () => {
                   : 'font-light hover:font-medium transition'
               }
               to="/allproducts/shoes"
+              onClick={() => setShowAlert(false)}
             >
               Shoes
             </NavLink>
@@ -95,6 +99,7 @@ const ShopCategory = () => {
                   : 'font-light hover:font-medium transition'
               }
               to="/allproducts/jewelery"
+              onClick={() => setShowAlert(false)}
             >
               Jewelery
             </NavLink>
@@ -105,6 +110,7 @@ const ShopCategory = () => {
                   : 'font-light hover:font-medium transition'
               }
               to="/allproducts/bag"
+              onClick={() => setShowAlert(false)}
             >
               Bag
             </NavLink>
@@ -220,51 +226,18 @@ const ShopCategory = () => {
 
           {/* display-products */}
           <div className="grid grid-cols-3 gap-[1.825rem] w-full max-sm:grid-cols-1 max-sm:gap-[1.5rem] max-md:grid-cols-2 max-md:gap-[1.5rem]">
-            {filteredProducts.map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col border border-greyborder rounded-md max-sm:w-[80%] max-sm:mx-auto cursor-pointer shadow-none hover:shadow-lg transition"
-              >
-                <div className="relative">
-                  <div className="w-full h-[350px] max-sm:h-[300px] max-md:h-[325px]">
-                    <img
-                      className="w-full h-full rounded-t-md object-fill object-center"
-                      src={item.images}
-                      alt=""
-                    />
-                  </div>
-                  <div className="absolute top-[16px] w-[30px] h-[30px] right-[16px]">
-                    <img
-                      className="w-full h-full cursor-pointer"
-                      src={heart_icon}
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col h-full justify-between px-[1.25rem]   py-[1.4rem]">
-                  <div className="flex flex-col gap-[.6rem] ">
-                    <p className="text-greytext max-sm:text-[14px]">
-                      {item.category}
-                    </p>
-                    <p className="text-primaryblack text-[1.125rem] max-sm:textt-[1rem]">
-                      {item.name}
-                    </p>
-                    <p className="font-bold text-primaryblack text-[1.125rem] max-sm:text-[1rem]">
-                      ${item.price}
-                    </p>
-                  </div>
-                  <div className="flex justify-center w-full mt-[1rem]">
-                    <Link
-                      //  onClick={(event) => scrollToTopAndNavigate(event, history)}
-                      to="/cart"
-                      className="bg-browntheme py-[.5rem] text-center text-white w-full font-medium rounded-md hover:bg-hoverbrown hover:transition"
-                    >
-                      Add to Cart
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
+            {filteredProducts.map((item, index) => {
+              return (
+                <Item
+                  key={index}
+                  id={item.id}
+                  name={item.name}
+                  images={item.images}
+                  price={item.price}
+                  category={item.category}
+                />
+              );
+            })}
           </div>
         </div>
 

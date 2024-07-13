@@ -23,7 +23,9 @@ export default {
       greyfill: 'rgba(185,179,179,0.4)',
       black: '#000000',
       redtheme: '#B82707',
+      green: colors.green,
       gray: colors.gray,
+      red: colors.red,
     },
     spacing: {
       'custom-mr' : '50px',

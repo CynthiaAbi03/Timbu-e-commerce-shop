@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -10,12 +10,13 @@ import paypal from '../assets/icons/paypal.svg';
 import payoneer from '../assets/icons/payoneer.svg';
 import help from '../assets/icons/help_outline.svg';
 import calender from '../assets/icons/calendar.svg';
+import { ShopContext } from '../context/ShopContextss';
 
 const Checkout = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  const {getTotalCartAmount} = useContext(ShopContext);
   return (
     <div className="min-h-screen">
       <Header />
@@ -338,16 +339,16 @@ const Checkout = () => {
               <div className="flex flex-col gap-[1rem] ">
                 <div className="px-[1.5rem] flex justify-between items-center text-[1.25rem] text-primaryblack max-sm:px-[3rem] max-sm:text-[1.25rem]">
                   <p>Items Subtotal</p>
-                  <p>$400</p>
+                  <p>${getTotalCartAmount()}</p>
                 </div>
                 <div className=" px-[1.5rem] flex justify-between items-center text-[1.25rem] text-primaryblack max-sm:px-[3rem] max-sm:text-[1.25rem]">
                   <p>Tax</p>
-                  <p>$400</p>
+                  <p>$50</p>
                 </div>
                 <div className="border-t border-t-greyborder"></div>
                 <div className="px-[1.5rem] flex justify-between items-center font-bold text-primaryblack text-[2rem] max-sm:px-[3rem] max-sm:text-[1.5rem]">
                   <p>Total</p>
-                  <p>$400</p>
+                  <p>${getTotalCartAmount() + 50}</p>
                 </div>
                 <Link
                   to="/"

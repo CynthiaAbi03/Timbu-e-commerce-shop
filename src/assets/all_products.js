@@ -18,7 +18,7 @@ let all_product = [
         category: 'DRESSES',
         name: 'Ladies Off Shoulder Slit Hem Cable Party Dress with Belt',
         type: 'Women',
-        price: 200
+        price: 200,
 
     },
     {
@@ -27,7 +27,8 @@ let all_product = [
         category: 'BAGS',
         name: 'Woman Square Solid Tassel Large Messenger Handbag',
         type: 'Women',
-        price: 200
+        price: 200,
+       
 
     },
     {
@@ -36,7 +37,8 @@ let all_product = [
         category: 'SHOES',
         name: 'Men\'S Lightweight Shoes - Casual Athletic Sneakers',
         type: 'Men',
-        price: 200
+        price: 200,
+        
 
     },
     {
@@ -46,7 +48,8 @@ let all_product = [
         category: 'DRESSES',
         name: 'Two Piece Blazer Sets Sleeveless Short Jacket High Waist Loose Pants',
         type: 'Women',
-        price: 200
+        price: 200,
+        
 
     },
     {
@@ -57,7 +60,8 @@ let all_product = [
         category: 'BAG',
         name: 'Women\'s Fashion Shoulder Bag Crossbody Bag',
         type: 'Women',
-        price: 200
+        price: 200,
+        
 
     },
     {
@@ -68,18 +72,20 @@ let all_product = [
         category: 'SHOES',
         name: 'acquered Leather Pumps Mid Heels Stiletto Wedding Bridal Shoes',
         type: 'Women',
-        price: 200
+        price: 200,
+        
 
     },
     {
-        id: 7,
+        id: 6,
         images: p7_img,
         // category: 'SHOES',
         // name: 'acquered Leather Pumps Mid Heels Stiletto Wedding Bridal Shoes',
         category: 'JEWELERY',
         name: 'Women Chord With Sparkling Zirconia Jewelery Set',
         type: 'Women',
-        price: 200
+        price: 200,
+        
 
     },
     {
@@ -88,7 +94,8 @@ let all_product = [
         category: 'DRESSES',
         name: 'Silky Trending Ladies 2set/ Top And Pant',
         type: 'women',
-        price: 200
+        price: 200,
+       
 
     },
     {
@@ -99,7 +106,8 @@ let all_product = [
         category: 'BAG',
         name: 'Woman Square Solid Tassel Large Messenger Handbag ',
         type: 'Women',
-        price: 200
+        price: 200,
+        quantity: 1,
 
     },
     {
@@ -108,7 +116,8 @@ let all_product = [
         category: 'DRESSES',
         name: 'Sexy Strapless  Dress Front Slit Bare Shoulder ',
         type: 'Women',
-        price: 200
+        price: 200,
+        quantity: 1,
 
     },
     {
@@ -117,7 +126,8 @@ let all_product = [
         category: 'SHOES',
         name: 'Martin Ankle Pocket Boots For Women Party Dress Work Shoes',
         type: 'Women',
-        price: 200
+        price: 200,
+        
     },
     {
         id: 12,
@@ -125,7 +135,8 @@ let all_product = [
         category: 'JEWELERY',
         name: 'Ladies Crystal rings and pendant jewelery set ',
         type: 'Women',
-        price: 200
+        price: 200,
+       
     },
 
 
