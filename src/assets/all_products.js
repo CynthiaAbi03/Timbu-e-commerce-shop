@@ -92,7 +92,7 @@ let all_product = [
         id: 8,
         images: p8_img,
         category: 'DRESSES',
-        name: 'Silky Trending Ladies 2set/ Top And Pant',
+        name: 'Silky Trending Ladies 2set Top And Pant',
         type: 'women',
         price: 200,
        
@@ -138,6 +138,7 @@ let all_product = [
         price: 200,
        
     },
+ 
 
 
 ]

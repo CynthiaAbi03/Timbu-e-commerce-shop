@@ -1,22 +1,28 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useNavigate} from 'react-router-dom';
 import { ShopContext } from '../../context/ShopContextss';
 import heart_icon from '../../assets/icons/heart_icon.svg';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Stack from '@mui/material/Stack';
+import left_chev from '../../assets/icons/left_chev.svg';
+import right_chev from '../../assets/icons/right_chev.svg';
+
 
 const Item = (props) => {
   const { addToCart, showAlert, setShowAlert } = useContext(ShopContext);
+  const navigate = useNavigate();
 
   const handleAddToCart = (e) => {
     e.preventDefault();
     addToCart(props.id);
     setShowAlert(true);
+    console.log('added to cart', props.id);
   };
 
   return (
-    
+
+
     <div
       key={props.index}
       className="flex flex-col border border-greyborder rounded-md max-sm:w-[80%] max-sm:mx-auto cursor-pointer shadow-none hover:shadow-lg transition"
@@ -27,7 +33,7 @@ const Item = (props) => {
             {' '}
             <img
               onClick={window.scrollTo(0, 0)}
-              className="w-full h-full hover:scale-[1.01] transition rounded-t-md object-fill object-center cursor-pointer"
+              className="w-full h-full hover:scale-[1.01] transition rounded-t-md object-cover object-center cursor-pointer"
               src={props.images}
               alt=""
             />
@@ -43,7 +49,7 @@ const Item = (props) => {
       </div>
       <div className="flex flex-col h-full justify-between px-[1.25rem]   py-[1.4rem]">
         <div className="flex flex-col gap-[.6rem] ">
-          <p className="text-greytext max-sm:text-[14px]">{props.category}</p>
+          <p className="text-greytext max-sm:text-[14px] uppercase ">{props.category}</p>
           <p className="text-primaryblack text-[1.125rem] max-sm:textt-[1rem]">
             {props.name}
           </p>
@@ -64,6 +70,8 @@ const Item = (props) => {
         </div>
       </div>
     </div>
+  
+    
 
   );
 };

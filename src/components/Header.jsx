@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { ShopContext } from '../context/ShopContextss';
 
 const Header = () => {
-  const filterCategory = ['Women', 'Children'];
+  const filterCategory = ['Dresses','Shoes', 'Jackets','Jewelery','Sweaters', 'HandBag','Blouse'];
   const filterSizes = ['Small', 'Medium', 'Large', 'Extra Large'];
   const { getTotalCartItems, showAlert, setShowAlert } = useContext(ShopContext);
   const [isVisible, setIsVisible] = useState(false);
@@ -76,7 +76,7 @@ const Header = () => {
       
         {/* sidebar smaller view*/}
         <div
-          className={`absolute px-[30px] shadow-sm flex w-[70%] flex-col gap-[1rem] h-screen max-md:h-screen py-[30px] top-[0px] transition-all duration-300 bg-white border border-solid  ${
+          className={`absolute px-[30px] overflow-auto shadow-sm flex w-[70%] flex-col gap-[1rem] h-screen max-md:h-screen py-[30px] top-[0px] transition-all duration-300 bg-white border border-solid  ${
             isVisible ? 'left-[0px]' : 'left-[-100%]'
           }`}
         >

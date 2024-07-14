@@ -25,7 +25,7 @@ const Cart = () => {
         <div className="flex items-center gap-[.5rem]">
           <Link
             className="w-[48px] h-[48px] max-sm:w-[40px] max-sm:h-[40px] rounded-full bg-none flex items-center justify-center hover:bg-gray-200 transition"
-            to="/"
+            to="/allproducts/display/1"
           >
             <img
               className="h-[38px] w-[38px] max-sm:w-[34px] max-sm:h-[34px]"

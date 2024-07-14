@@ -7,6 +7,7 @@ import ShopContextProvider from './context/ShopContextss.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ShopContextProvider>
+
       <App />
     </ShopContextProvider>
 

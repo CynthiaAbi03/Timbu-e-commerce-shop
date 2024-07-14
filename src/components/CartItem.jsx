@@ -3,14 +3,26 @@ import { ShopContext } from '../context/ShopContextss';
 import { Link } from 'react-router-dom';
 
 const CartItem = () => {
-  const { all_product, getTotalCartAmount, getTotalCartItems, cartItems, addToCart, removeFromCart } =
-    useContext(ShopContext);
-  return (
-    getTotalCartItems() > 0 ? (
-      <div className="flex justify-between gap-[2rem] w-full max-sm:flex-col max-md:flex-col">
+  const {
+    all_product,
+    allShopProducts,
+    getTotalCartAmount,
+    getTotalCartItems,
+    cartItems,
+    addToCart,
+    removeFromCart,
+    isLoading,
+    errorLoading,
+  } = useContext(ShopContext);
+  return isLoading? (
+    <div>LOADING...</div>
+  ): errorLoading? (
+    <div>Error Loading data please try again later</div>
+  ): getTotalCartItems() > 0 ? (
+    <div className="flex justify-between gap-[2rem] w-full max-sm:flex-col max-md:flex-col min-h-screen">
       {/* cart view */}
       <div className=" flex flex-col  w-[75%] gap-[2rem] max-sm:w-full max-md:w-full">
-        {all_product.map((item, index) => {
+        {allShopProducts.map((item, index) => {
           if (cartItems[item.id] > 0) {
             return (
               <div
@@ -24,7 +36,7 @@ const CartItem = () => {
                   <div className=" h-full max-sm:h-full max-xsm:h-full max-md:h-full ">
                     <img
                       className="h-full w-full object-cover rounded-[4px]"
-                      src={item.images}
+                      src={item.image1}
                       alt=""
                     />
                   </div>
@@ -115,13 +127,20 @@ const CartItem = () => {
         </div>
       </div>
     </div>
-    ):(
+  ) : (
     <div>
-      <div>
-        No items added to cart
+      <div className="font-bold items-center mt-[4rem] flex-col flex min-h-screen gap-[2rem]">
+        <p className="text-black text-4xl max-md:text-3xl max-sm:text-2xl ">
+          No items added to cart
+        </p>
+        <Link
+          to="/"
+          className="text-white text-[2rem] max-md:text-[1.4rem] cursor-pointer transition font-light px-[.9em] py-[.4em] rounded-full bg-browntheme hover:bg-hoverbrown "
+        >
+          Shop Now
+        </Link>
       </div>
     </div>
-    )  
   );
 };
 
