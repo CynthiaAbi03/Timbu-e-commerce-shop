@@ -52,10 +52,12 @@ const AllProducts = () => {
         wrapperStyle
         wrapperClass
       />
-      <p className=''>Loading</p>
+      <p className=''>Loading...</p>
     </div>
   ) : errorLoading ? (
-    <div className="text-black">Error Loading data</div>
+    <div className="justify-center flex flex-col gap-[1rem] items-center min-h-screen">
+      Error Fetching data please try again later
+    </div>
   ) : (
     <div className="min-h-screen">
       <Header />

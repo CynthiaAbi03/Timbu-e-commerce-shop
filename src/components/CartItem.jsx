@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../context/ShopContextss';
 import { Link } from 'react-router-dom';
+import { Audio } from 'react-loader-spinner';
 
 const CartItem = () => {
   const {
@@ -14,11 +15,24 @@ const CartItem = () => {
     isLoading,
     errorLoading,
   } = useContext(ShopContext);
-  return isLoading? (
-    <div>LOADING...</div>
-  ): errorLoading? (
-    <div>Error Loading data please try again later</div>
-  ): getTotalCartItems() > 0 ? (
+  return isLoading ? (
+    <div className="justify-center flex flex-col gap-[1rem] items-center min-h-screen">
+      <Audio
+        height="70"
+        width="70"
+        radius="9"
+        color="green"
+        ariaLabel="loading"
+        wrapperStyle
+        wrapperClass
+      />
+      <p className="">Loading...</p>
+    </div>
+  ) : errorLoading ? (
+    <div className="justify-center flex flex-col gap-[1rem] items-center min-h-screen">
+      Error Fetching data please try again later
+    </div>
+  ) : getTotalCartItems() > 0 ? (
     <div className="flex justify-between gap-[2rem] w-full max-sm:flex-col max-md:flex-col min-h-screen">
       {/* cart view */}
       <div className=" flex flex-col  w-[75%] gap-[2rem] max-sm:w-full max-md:w-full">

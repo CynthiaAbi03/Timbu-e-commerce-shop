@@ -22,7 +22,7 @@ const Checkout = () => {
       <Header />
       <div className="w-full mt-[2rem] max-sm:mt-[10rem] max-md:mt-[10rem] max-w-[2200px] mx-auto pr-custom-mr pl-custom-ml max-sm:px-[24px] max-md:px-[32px] flex flex-col gap-[2rem]">
         <div className="flex items-center gap-[.5rem]">
-          <Link className="w-[48px] h-[48px] max-sm:w-[40px] max-sm:h-[40px] rounded-full bg-none flex items-center justify-center hover:bg-gray-200 transition" to="/cart">
+          <Link  className="w-[48px] h-[48px] max-sm:w-[40px] max-sm:h-[40px] rounded-full bg-none flex items-center justify-center hover:bg-gray-200 transition" to="/">
             <img className='h-[38px] w-[38px] max-sm:w-[34px] max-sm:h-[34px]' src={arrow_back} alt="back arrow" />
           </Link>
           <p className="text-[1.5rem] max-sm:text-[1.25rem]">Back</p>

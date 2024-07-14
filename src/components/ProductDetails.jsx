@@ -11,11 +11,18 @@ const StyledRating = styled(Rating)(({ theme }) => ({
   },
 }));
 const ProductDetails = (props) => {
-  const { allShopProducts, addToCart, removeFromCart } =
+  const { allShopProducts, addToCart, removeFromCart, setShowAlert } =
     useContext(ShopContext);
   const [value, setValue] = useState(3);
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    addToCart(props.id);
+    setShowAlert(true);
+    window.scrollTo(0,0);
+    console.log('added to cart', props.id);
+  };
   return (
-    <div className="flex h-full gap-[1rem] max-md:h-full max-md:mt-[9rem] max-md:gap-[2rem] max-sm:gap-[2rem] max-sm:pl-[24px] max-sm:pr-[24px] max-sm:flex-col max-md:flex-col max-sm:mt-[8rem] max-sm:h-full max-sm:w-full max-sm:mx-auto">
+    <div className="flex h-full gap-[2rem] max-md:h-full max-md:mt-[9rem] max-md:gap-[2rem] max-sm:gap-[2rem] max-sm:pl-[24px] max-sm:pr-[24px] max-sm:flex-col max-md:flex-col max-sm:mt-[8rem] max-sm:h-full max-sm:w-full max-sm:mx-auto">
       <div className=" h-full w-[40%] max-sm:w-full rounded-lg max">
         <img
           className=" w-full h-full rounded-lg object-contain"
@@ -99,7 +106,12 @@ const ProductDetails = (props) => {
         </div>
 
         <div className="p-[0px] m-[0px]">
-          <button className="text-white bg-browntheme font-medium py-[.5rem] max-sm:py-[.5rem] max-md:w-full max-sm:w-full w-1/2 rounded-md">
+          <button
+            onClick={(e) => {
+              handleAddToCart(e);
+            }}
+            className="text-white bg-browntheme font-medium py-[.5rem] max-sm:py-[.5rem] max-md:w-full max-sm:w-full w-1/2 rounded-md"
+          >
             Add to Cart
           </button>
         </div>
