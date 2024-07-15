@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 import { ShopContext } from '../context/ShopContextss';
-import image1 from '../assets/images/product_1.png';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Rating from '@mui/material/Rating';
 import { styled } from '@mui/system';
 
@@ -11,27 +12,36 @@ const StyledRating = styled(Rating)(({ theme }) => ({
   },
 }));
 const ProductDetails = (props) => {
-  const { allShopProducts, addToCart, removeFromCart, cartItems, setShowAlert } =
-    useContext(ShopContext);
+  const {
+    allShopProducts,
+    addToCart,
+    removeFromCart,
+    cartItems,
+    setShowAlert,
+  } = useContext(ShopContext);
   const [value, setValue] = useState(3);
   const handleAddToCart = (e) => {
     e.preventDefault();
     addToCart(props.id);
     setShowAlert(true);
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     console.log('added to cart', props.id);
   };
+
+  const images = [props.image1, props.image2];
   return (
-    <div className="flex h-full gap-[2rem] max-md:h-full max-md:gap-[2rem] max-sm:gap-[2rem] max-sm:pl-[24px] max-sm:pr-[24px] max-sm:flex-col max-sm:h-full max-sm:w-full max-sm:mx-auto">
-      <div className=" h-full w-[40%] max-sm:w-full rounded-lg max">
-        <img
-          className=" w-full h-full rounded-lg object-contain"
-          src={props.image1}
-          alt=""
-        />
+    <div className="flex gap-[2rem] max-md:h-full max-md:gap-[2rem] max-sm:gap-[2rem] max-sm:pl-[24px] max-sm:pr-[24px] max-sm:flex-col max-sm:h-full max-sm:w-full max-sm:mx-auto">
+      <div className="h-full w-[40%] max-sm:w-full rounded-lg max">
+        <Carousel useKeyboardArrows={true}>
+          {images.map((URL, index) => (
+            <div className="slide">
+              <img className='h-full w-full' alt="sample_file" src={URL} key={index} />
+            </div>
+          ))}
+        </Carousel>
       </div>
 
-      <div className="flex flex-1 justify-between max-sm:gap-[1.6rem] max-md: gap-[2rem] flex-col">
+      <div className="flex flex-1 gap-[3rem] max-sm:gap-[1.6rem] max-md:gap-[2rem] flex-col">
         <div className="flex flex-col gap-[.875rem]">
           <div className="flex p-[0px] m-[0px] gap-[.5rem] flex-col">
             <p className="text-gray-400 uppercase text-[1.25rem] max-sm:text-[1rem]">
@@ -66,7 +76,7 @@ const ProductDetails = (props) => {
               -
             </button>
             <p className="px-[.8em] py-[.3em] font-light border-b max-sm:px-[.5em] max-sm:py-[.2em] border-t border-greyborder text-greytext ">
-            {cartItems[props.id]}
+              {cartItems[props.id]}
             </p>
             <button
               onClick={() => addToCart(props.id)}
