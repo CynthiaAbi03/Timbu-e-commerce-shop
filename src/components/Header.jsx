@@ -14,11 +14,39 @@ import Stack from '@mui/material/Stack';
 import CloseIcon from '@mui/icons-material/Close';
 import {IconButton} from '@mui/material';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ShopContext } from '../context/ShopContextss';
 
-const Header = () => {
-  const filterCategory = ['Dresses','Shoes', 'Jackets','Jewelery','Sweaters', 'HandBag','Blouse'];
+const Header = (props) => {
+  const { mainCategory } = props;
+  const filterCategoryWomen = [
+    'Shoes',
+    'Jackets',
+    'Jewelery',
+    'Sweaters',
+    'HandBag',
+    'Blouse',
+  ];
+  const filterCategoryMen = ['Jackets'];
+  const filterCategoryKids = ['Sweaters'];
+  const [filterCategory, setFilterCategory] = useState(filterCategoryWomen);
+  useEffect(() => {
+    if (mainCategory) {
+      switch (mainCategory.toLowerCase()) {
+        case 'men':
+          setFilterCategory(filterCategoryMen);
+          break;
+        case 'women':
+          setFilterCategory(filterCategoryWomen);
+          break;
+        case 'kids':
+          setFilterCategory(filterCategoryKids);
+          break;
+        default:
+          setFilterCategory([]);
+      }
+    }
+  }, [mainCategory]);
   const filterSizes = ['Small', 'Medium', 'Large', 'Extra Large'];
   const { getTotalCartItems, showAlert, setShowAlert } = useContext(ShopContext);
   const [isVisible, setIsVisible] = useState(false);

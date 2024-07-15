@@ -1,18 +1,47 @@
-import React , {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
 import DynamicCSSVariables from '../components/CustomSlider';
 
-const FilterSidebar = () => {
-    const filterCategory = ['Shoes', 'Jackets','Jewelery','Sweaters', 'HandBag','Blouse'];
-    const filterSizes = ['Small', 'Medium', 'Large', 'Extra Large'];
+const FilterSidebar = (props) => {
+  const { mainCategory } = props;
+  const filterCategoryWomen = [
+    'Shoes',
+    'Jackets',
+    'Jewelery',
+    'Sweaters',
+    'HandBag',
+    'Blouse',
+  ];
+  const filterCategoryMen = ['Jackets'];
+  const filterCategoryKids = ['Sweaters'];
+  const [filterCategory, setFilterCategory] = useState(filterCategoryWomen);
+  
+  useEffect(() => {
+    if (mainCategory) {
+      switch (mainCategory.toLowerCase()) {
+        case 'men':
+          setFilterCategory(filterCategoryMen);
+          break;
+        case 'women':
+          setFilterCategory(filterCategoryWomen);
+          break;
+        case 'kids':
+          setFilterCategory(filterCategoryKids);
+          break;
+        default:
+          setFilterCategory([]);
+      }
+    }
+  }, [mainCategory]);
+  const filterSizes = ['Small', 'Medium', 'Large', 'Extra Large'];
   return (
-    <div className="border border-solid sticky top-[20px] bg-white border-greyborder w-[360px] px-[30px] py-[30px] h-[750px] rounded-lg max-sm:hidden max-md:hidden">
+    <div className="border border-solid sticky top-[20px] h-[700px] bg-white border-greyborder w-[360px] px-[30px] py-[30px] rounded-lg max-sm:hidden max-md:hidden">
       <div className="flex flex-col gap-[2rem]">
         <p>Filter By:</p>
         <div className="flex flex-col gap-[.5rem]">
           <p className="font-medium text-[1rem] text-primaryblack">CATEGORY</p>
           <div className="flex flex-col gap-[.5rem]">
-            <div className="flex items-center gap-[.5rem]">
+            {/* <div className="flex items-center gap-[.5rem]">
               <Checkbox
                 defaultChecked
                 style={{
@@ -25,7 +54,8 @@ const FilterSidebar = () => {
               <label htmlFor="Men" className="font-light  text-primaryblack">
                 Dresses
               </label>
-            </div>
+            </div> */}
+
             {filterCategory.map((name, index) => (
               <div key={index} className="flex items-center gap-[.5rem]">
                 <Checkbox

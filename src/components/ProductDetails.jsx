@@ -22,7 +22,7 @@ const ProductDetails = (props) => {
     console.log('added to cart', props.id);
   };
   return (
-    <div className="flex h-full gap-[2rem] max-md:h-full max-md:mt-[9rem] max-md:gap-[2rem] max-sm:gap-[2rem] max-sm:pl-[24px] max-sm:pr-[24px] max-sm:flex-col max-md:flex-col max-sm:mt-[8rem] max-sm:h-full max-sm:w-full max-sm:mx-auto">
+    <div className="flex h-full gap-[2rem] max-md:h-full max-md:mt-[6rem] max-md:gap-[2rem] max-sm:gap-[2rem] max-sm:pl-[24px] max-sm:pr-[24px] max-sm:flex-col max-md:flex-col max-sm:mt-[8rem] max-sm:h-full max-sm:w-full max-sm:mx-auto">
       <div className=" h-full w-[40%] max-sm:w-full rounded-lg max">
         <img
           className=" w-full h-full rounded-lg object-contain"

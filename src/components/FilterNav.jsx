@@ -4,7 +4,7 @@ import { ShopContext } from '../context/ShopContextss';
 import chevron_down from '../assets/icons/chevron-down.svg';
 
 const FilterNav = () => {
-    const {showAlert, setShowAlert} = useContext(ShopContext);
+  const { showAlert, setShowAlert,page} = useContext(ShopContext);
   return (
     <div className="flex items-center justify-between max-sm:w-full max-sm:flex-col  max-md:flex-col max-sm:items-start max-md:items-start max-sm:gap-[1.5rem] max-md:gap-[1.5rem] ">
       <div className="flex items-center gap-[1.625rem]">
@@ -72,9 +72,15 @@ const FilterNav = () => {
         </NavLink>
       </div>
       <div className="flex text-primaryblack">
-        <p className="font-medium text-[1rem]">
-          Showing <span className="font-light"> 1-20 of 1000 results</span>
-        </p>
+        {page === 4 ? (
+          <p className="font-medium text-[1rem]">
+            Showing <span className="font-light"> 1 of 31 results</span>
+          </p>
+        ) : (
+          <p className="font-medium text-[1rem]">
+            Showing <span className="font-light"> 1-10 of 31 results</span>
+          </p>
+        )}
       </div>
     </div>
   );

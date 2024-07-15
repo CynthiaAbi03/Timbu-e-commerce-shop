@@ -20,7 +20,7 @@ const ShopCategory = () => {
   );
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header mainCategory = {mainCategory}/>
       <div
         className="bg-hero-pattern bg-contain bg-center h-[279px] mx-auto max-w-[2200px] w-full"
         style={{ backgroundImage: `url(${hero_img})` }}
@@ -31,7 +31,7 @@ const ShopCategory = () => {
 
         <div className="flex gap-[2rem]">
           {/* sidebar */}
-          <FilterSidebar />
+          <FilterSidebar mainCategory = {mainCategory} />
 
           {/* display-products */}
           <div className="flex flex-col gap-[4rem]">
@@ -39,6 +39,7 @@ const ShopCategory = () => {
               {filteredProducts.map((item, index) => {
                 return (
                   <Item
+                  
                     key={index}
                     id={item.id}
                     name={item.name}
