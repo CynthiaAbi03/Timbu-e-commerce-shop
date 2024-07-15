@@ -137,7 +137,7 @@ const CartItem = () => {
             <div className="border-t border-t-greyborder"></div>
             <div className="px-[1.5rem]  max-sm:px-[3rem]  flex justify-between items-center font-bold text-primaryblack text-[2rem]">
               <p>Total</p>
-              <p>${getTotalCartAmount() + 50}</p>
+              <p>${getTotalCartAmount() + 10}</p>
             </div>
             <Link
               to="/checkout"
