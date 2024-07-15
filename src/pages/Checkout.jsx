@@ -343,7 +343,7 @@ const Checkout = () => {
                 </div>
                 <div className=" px-[1.5rem] flex justify-between items-center text-[1.25rem] text-primaryblack max-sm:px-[3rem] max-sm:text-[1.25rem]">
                   <p>Tax</p>
-                  <p>$50</p>
+                  <p>$10</p>
                 </div>
                 <div className="border-t border-t-greyborder"></div>
                 <div className="px-[1.5rem] flex justify-between items-center font-bold text-primaryblack text-[2rem] max-sm:px-[3rem] max-sm:text-[1.5rem]">

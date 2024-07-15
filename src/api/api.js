@@ -17,7 +17,7 @@ export const fetchProducts = async ({ page = 1, size = 10 } = {}) => {
         const response = await fetch(apiUrl, {
             headers: {
                 accept: 'application/json',
-             
+
             }
         });
         if (!response.ok) {

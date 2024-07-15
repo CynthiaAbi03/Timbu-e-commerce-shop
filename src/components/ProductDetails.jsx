@@ -11,7 +11,7 @@ const StyledRating = styled(Rating)(({ theme }) => ({
   },
 }));
 const ProductDetails = (props) => {
-  const { allShopProducts, addToCart, removeFromCart, setShowAlert } =
+  const { allShopProducts, addToCart, removeFromCart, cartItems, setShowAlert } =
     useContext(ShopContext);
   const [value, setValue] = useState(3);
   const handleAddToCart = (e) => {
@@ -60,16 +60,16 @@ const ProductDetails = (props) => {
           <p className="font-light text-[1.2rem]">Quantity</p>
           <div className="flex items-center  text-[1.25rem] max-sm:text-[1rem] max-xsm:text-[1rem]">
             <button
-              onClick={() => removeFromCart(item.id)}
+              onClick={() => removeFromCart(props.id)}
               className="bg-greyfill px-[.8em] py-[.3em] max-sm:px-[.5em] max-sm:py-[.2em] border border-greyborder text-greytext"
             >
               -
             </button>
             <p className="px-[.8em] py-[.3em] font-light border-b max-sm:px-[.5em] max-sm:py-[.2em] border-t border-greyborder text-greytext ">
-              4
+            {cartItems[props.id]}
             </p>
             <button
-              onClick={() => addToCart(item.id)}
+              onClick={() => addToCart(props.id)}
               className="px-[.8em] py-[.3em] max-sm:px-[.5em] max-sm:py-[.2em] bg-greyfill border  border-greyborder text-greytext "
             >
               +
