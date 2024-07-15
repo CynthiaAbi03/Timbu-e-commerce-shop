@@ -24,7 +24,7 @@ const ShopContextProvider = (props) => {
   const [allShopProducts, setAllShopProducts] = useState();
   const [allProductsByPage, setAllProductsByPage] = useState({ 1: [] });
   const [isLoading, setIsLoading] = useState(false);
-  const [clearLocalStorage, setClearLocalStorage] = useState(false);
+  const [clearLocalStorage, setClearLocalStorage] = useState(true);
   const [errorLoading, setErrorLoading] = useState(false);
 
   useEffect(() => {
