@@ -270,7 +270,7 @@ const Header = (props) => {
                     />
                   </Link>
                   {getTotalCartItems() > 0 && (
-                    <div className="absolute top-[-12px] font-bold right-[-10px] flex items-center justify-center bg-red-600 text-white rounded-full h-[30px] w-[30px]">
+                    <div className="absolute top-[-12px] font-bold right-[-10px] flex items-center justify-center bg-red-600 text-white rounded-full max-sm:h-[20px] max-sm:w-[20px] max-sm:text-[.825rem] h-[30px] w-[30px]">
                       {getTotalCartItems()}
                     </div>
                   )}
