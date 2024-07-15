@@ -4,7 +4,7 @@ import hero_img from '../assets/images/HeroImage.png';
 import './styles/shop.css';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Item from '../components/styles/Item';
+import Item from '../components/Item';
 import { ShopContext } from '../context/ShopContextss';
 import PaginationNav from '../components/PaginationNav';
 import FilterNav from '../components/FilterNav';

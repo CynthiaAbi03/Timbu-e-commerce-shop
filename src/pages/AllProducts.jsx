@@ -10,7 +10,7 @@ import Header from '../components/Header';
 import chevron_down from '../assets/icons/chevron-down.svg';
 import left_chev from '../assets/icons/left_chev.svg';
 import right_chev from '../assets/icons/right_chev.svg';
-import Item from '../components/styles/Item';
+import Item from '../components/Item';
 import { ShopContext } from '../context/ShopContextss';
 import PaginationNav from '../components/PaginationNav';
 import FilterNav from '../components/FilterNav';
@@ -52,7 +52,7 @@ const AllProducts = () => {
         wrapperStyle
         wrapperClass
       />
-      <p className=''>Loading...</p>
+      <p className="">Loading...</p>
     </div>
   ) : errorLoading ? (
     <div className="justify-center flex flex-col gap-[1rem] items-center min-h-screen">

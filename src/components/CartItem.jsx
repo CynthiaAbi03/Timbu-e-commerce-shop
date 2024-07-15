@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../context/ShopContextss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Audio } from 'react-loader-spinner';
 
 const CartItem = () => {
@@ -15,6 +15,11 @@ const CartItem = () => {
     isLoading,
     errorLoading,
   } = useContext(ShopContext);
+  const navigate = useNavigate();
+
+  const handleClickImage = (id) => {
+    navigate(`/product/${id}`);
+  };
   return isLoading ? (
     <div className="justify-center flex flex-col gap-[1rem] items-center min-h-screen">
       <Audio
@@ -47,7 +52,10 @@ const CartItem = () => {
                   key={index}
                   className="py-[.8rem] h-full w-full px-[1.25rem] flex  gap-[1rem] "
                 >
-                  <div className=" h-full max-sm:h-full max-xsm:h-full max-md:h-full ">
+                  <div
+                    onClick={() => handleClickImage(item.id)}
+                    className=" h-full cursor-pointer max-sm:h-full max-xsm:h-full max-md:h-full "
+                  >
                     <img
                       className="h-full w-full object-cover rounded-[4px]"
                       src={item.image1}
