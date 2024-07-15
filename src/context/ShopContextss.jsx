@@ -141,12 +141,13 @@ const ShopContextProvider = (props) => {
         fetchAllData();
       }
 
-      if (clearLocalStorage) {
-        clearItemsFromLocalStorage();
-      }
+      // if (clearLocalStorage) {
+      //   clearItemsFromLocalStorage();
+      // }
     };
 
     fetchLocalStorageData();
+    clearItemsFromLocalStorage();
   }, []);
 
   useEffect(() => {
