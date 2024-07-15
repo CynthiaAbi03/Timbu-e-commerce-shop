@@ -130,6 +130,7 @@ const ShopContextProvider = (props) => {
         try {
           const parsedShopProducts = JSON.parse(storedShopProducts);
           setAllShopProducts(parsedShopProducts);
+          setCartItems(getDefaultCart(parsedShopProducts));
         } catch (error) {
           console.error(
             'Error parsing JSON for all shop products from localstorage:',
